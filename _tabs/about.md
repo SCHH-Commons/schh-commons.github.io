@@ -44,7 +44,7 @@ Sun City Hilton Head is a large and vibrant community, but information is scatte
 
 ## Get Involved
 
-* **Try the Tools** – Explore one of the provided AI Chatbots [SCHH chatbots](/chatbots) or browse our resource library.
+* **Try the Tools** – Explore one of the provided AI Chatbots [SCHH chatbots](#) or browse our resource library.
 * **Share Your Knowledge** – Have a helpful tip, document, or resource? Consider contributing.
 * **Join the Conversation** – Ideas and feedback is welcome from anyone interested in shaping the future of SCHH Commons.
 
