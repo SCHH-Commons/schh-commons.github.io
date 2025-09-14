@@ -75,6 +75,7 @@ order: 5
   <input type="hidden" name="_subject" value="Website contact form">
   <input type="hidden" name="_next" value="https://www.schh-commons.org/thanks/">
   <input type="text" name="_honey" style="display:none">
+  <input type="hidden" name="_captcha" value="false">
 
   <button type="submit">Send</button>
 </form>
