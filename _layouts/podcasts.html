@@ -118,8 +118,7 @@ layout: default
     <li>
       {%- if post.thumbnail -%}
       <div class="image-container" data-path="{{post.path}}">
-        <img src="{{ post.path | replace_first: '_', '' | replace: '/index.md', '' }}/{{ post.thumbnail }}"
-          alt="{{ post.title }}" class="post-image shadow" />
+        {{ post.path | replace_first: '_', '' | replace: '/index.md', '' }}/{{ post.thumbnail }}
       </div>
       {%- endif -%}
       <div>
