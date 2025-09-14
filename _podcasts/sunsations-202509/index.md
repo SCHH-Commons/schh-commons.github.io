@@ -3,7 +3,6 @@ title: SunSations September 2025
 description: SunSations podcast
 date: 2025-08-25
 tags: sunsations
-thumbnail: September2025cover.png
 layout: post
 published: true
 ---
