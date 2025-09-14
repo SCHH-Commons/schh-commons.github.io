@@ -8,6 +8,7 @@ thumbnail:
 permalink: 
 layout: post
 published: false
+link_checker: false
 ---
 
 # SunSations April 2025

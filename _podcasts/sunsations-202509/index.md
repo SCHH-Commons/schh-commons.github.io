@@ -8,6 +8,7 @@ thumbnail: September2025cover.png
 permalink:
 layout: post
 published: true
+link_checker: false
 ---
 
 # SunSations September 2025[^1]
