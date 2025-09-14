@@ -26,6 +26,10 @@ url: "https://schh-commons.org" # the base hostname & protocol for your site
 
 github:
   username: rsnyder # change to your GitHub username
+  owner_name: schh-commons
+  repository_name: schh-commons.github.io
+  source:
+    branch: main
 
 twitter:
   username: rdsnyderjr # change to your Twitter username
@@ -167,6 +171,9 @@ kramdown:
 
 collections:
   tabs:
+    output: true
+    sort_by: order
+  podcasts:
     output: true
     sort_by: order
 
