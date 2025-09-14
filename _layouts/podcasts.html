@@ -131,8 +131,6 @@ layout: default
             {% assign sortedtags = post_tags | split:' ' | sort %}
             <br/><span class="post-meta">Tags:</span>
             {% for tag in post.tags %}
-              <!-- <a href="{{ site.url }}/tags/{{ tag }}">{{ tag }}</a>{% if forloop.last != true %},{% endif %} -->
-              <a href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>{% if forloop.last != true %},{% endif %}
             {% endfor %}
           {%- endif -%}
         </div>
