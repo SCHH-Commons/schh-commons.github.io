@@ -118,8 +118,8 @@ layout: default
     <li>
       {%- if post.thumbnail -%}
       <div class="image-container">
-        <img src="{{ post.path | replace_first: '_', '' | replace: '/index.md', '' }}/{{ post.thumbnail }}"
-          alt="{{ post.title }}" />
+        {% assign dir = post.path | replace_first: '_', '' | replace: '/index.md', '' %}
+        <img src="{{ dir }}/{{ post.thumbnail }}" alt="{{ post.title | escape }}" />
       </div>
       {%- endif -%}
       <div>

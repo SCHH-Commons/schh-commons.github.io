@@ -1,5 +1,5 @@
 ---
-title: "SunSations September 2025 xx"
+title: "SunSations September 2025"
 description: SunSations podcast
 author: 
 date: 2025-08-25
