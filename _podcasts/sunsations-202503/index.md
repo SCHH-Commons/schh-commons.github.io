@@ -8,7 +8,6 @@ thumbnail:
 permalink: 
 layout: post
 published: false
-link_checker: false
 ---
 
 # SunSations March 2025
