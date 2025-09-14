@@ -157,7 +157,8 @@ layout: default
     repo:   '{{site.github.repository_name}}',
     branch: '{{site.github.source.branch}}',
     path:   '{{ page.path }}'
-  }
+  };
+  console.log(pageData);
   document.querySelectorAll('.post-image').forEach((el) => {
     if (el.dataset?.src) {
       if (el.dataset?.src.startsWith('wc:') || el.dataset?.src.startsWith('http')) {
