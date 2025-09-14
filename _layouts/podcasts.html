@@ -99,7 +99,6 @@ layout: default
     <span style="font-weight:500;">Tags:&nbsp;</span>
     {% assign sortedtags = tags | split:' ' | sort %}
     {% for tag in sortedtags %}
-    <a href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>{% if forloop.last != true %},&nbsp;{% endif %}
     {% endfor %}
   </div>
   <hr style="margin:0;" /><br />
@@ -148,7 +147,6 @@ layout: default
         <br /><span class="post-meta">Tags:</span>
         {% for tag in post.tags %}
         <!-- <a href="{{ site.url }}/tags/{{ tag }}">{{ tag }}</a>{% if forloop.last != true %},{% endif %} -->
-        <a href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>{% if forloop.last != true %},{% endif %}
         {% endfor %}
         {%- endif -%}
       </div>
