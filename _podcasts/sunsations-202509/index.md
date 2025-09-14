@@ -14,4 +14,4 @@ published: true
 
 `audio #ss202509 src=SunSations_September_2025.mp3 caption="SunSations September 2025" aspect=5 .medium`
 
-[Notice of Election](){: #ss202509 play="1:24/1:55"}
+[Notice of Election](#){: #ss202509 play="1:24/1:55"}
