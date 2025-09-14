@@ -8,7 +8,8 @@ layout: default
     font-size: 1rem;
     color: #828282;
     margin-bottom: 0.25rem
-  } 
+  }
+
   h1 {
     margin-bottom: 0.5rem
   }
@@ -23,14 +24,17 @@ layout: default
   /* ————— Desktop layout ————— */
   .post-list li {
     display: flex;
-    flex-direction: row;       /* image left, text right */
+    flex-direction: row;
+    /* image left, text right */
     align-items: flex-start;
     margin-bottom: 1.5rem;
   }
 
   .post-list .image-container {
-    width: 250px;              /* modest thumbnail width */
-    height: 160px;             /* fixed thumbnail height */
+    width: 250px;
+    /* modest thumbnail width */
+    height: 160px;
+    /* fixed thumbnail height */
     overflow: hidden;
     flex-shrink: 0;
     margin-right: 1rem;
@@ -40,29 +44,36 @@ layout: default
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;         /* fill box & crop as needed */
+    object-fit: cover;
+    /* fill box & crop as needed */
     object-position: center;
   }
 
-  .post-list > li > div:last-of-type > h1,
-  .post-list > li > div:last-of-type > h2,
-  .post-list > li > div:last-of-type > h3,
-  .post-list > li > div:last-of-type > h4 {
-    margin-top: 0;             /* remove top margin if first element is a heading */
+  .post-list>li>div:last-of-type>h1,
+  .post-list>li>div:last-of-type>h2,
+  .post-list>li>div:last-of-type>h3,
+  .post-list>li>div:last-of-type>h4 {
+    margin-top: 0;
+    /* remove top margin if first element is a heading */
   }
 
   /* ————— Mobile override (≤600px) ————— */
   @media (max-width: 600px) {
     .post-list li {
-      flex-direction: column;  /* stack image above text */
+      flex-direction: column;
+      /* stack image above text */
     }
+
     .post-list .image-container {
-      width: 100%;             /* full width of list item */
-      height: 200px;           /* keep same height or switch to auto if you like */
+      width: 100%;
+      /* full width of list item */
+      height: 200px;
+      /* keep same height or switch to auto if you like */
       margin-right: 0;
       margin-bottom: 1rem;
     }
   }
+
   /***** End Post List Styling /*****/
 </style>
 
@@ -71,94 +82,97 @@ layout: default
   <div class="post-content">
     {{ content }}
   </div>
-  
-  <hr/>
-  
+
+  <hr />
+
   {% capture tags %}
-    {% for tag in site.tags %}
-      {{ tag[0] }}
-    {% endfor %}
+  {% for tag in site.tags %}
+  {{ tag[0] }}
+  {% endfor %}
   {% endcapture %}
 
-  {% assign num_tags = tags | number_of_words %}    
+  {% assign num_tags = tags | number_of_words %}
   {%- if num_tags > 0 -%}
-    <hr style="margin:0;"/>
-    <div class="site-tags" style="display: flex; background-color: #f8f8f8; padding: 6px; border-radius: 5px; flex-wrap: wrap;">
-      <span style="font-weight:500;">Tags:&nbsp;</span>
-      {% assign sortedtags = tags | split:' ' | sort %}
-      {% for tag in sortedtags %}
-        <a href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>{% if forloop.last != true %},&nbsp;{% endif %}
-      {% endfor %}
-    </div>
-    <hr style="margin:0;"/><br/>
+  <hr style="margin:0;" />
+  <div class="site-tags"
+    style="display: flex; background-color: #f8f8f8; padding: 6px; border-radius: 5px; flex-wrap: wrap;">
+    <span style="font-weight:500;">Tags:&nbsp;</span>
+    {% assign sortedtags = tags | split:' ' | sort %}
+    {% for tag in sortedtags %}
+    <a href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>{% if forloop.last != true %},&nbsp;{% endif %}
+    {% endfor %}
+  </div>
+  <hr style="margin:0;" /><br />
   {%- endif -%}
 
   {% assign posts = site.podcasts | where_exp:"item", "item.relative_path != '_podcasts/index.md'" %}
   {%- if posts.size > 0 -%}
 
-    {%- if page.list_title -%}
-      <h2 class="post-list-heading">{{ page.list_title }}</h2>
-    {%- endif -%}
+  {%- if page.list_title -%}
+  <h2 class="post-list-heading">{{ page.list_title }}</h2>
+  {%- endif -%}
 
-    <ul class="post-list">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      {%- for post in posts -%}
-      <li>
-        {%- if post.thumbnail -%}
-          <div class="image-container" data-path="{{post.path}}">
-            <img src="/podcasts/sunsations-202509/{{ post.thumbnail }}" data-src="{{ post.thumbnail }}" alt="{{ post.title }}" class="post-image shadow"/>
-          </div>
+  <ul class="post-list">
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    {%- for post in posts -%}
+    <li>
+      {%- if post.thumbnail -%}
+      <div class="image-container" data-path="{{post.path}}">
+        <img src="{{ post.path | replace_first: '_', '' | replace: '/index.md', '' }}/{{ post.thumbnail }}"
+          alt="{{ post.title }}" class="post-image shadow" />
+      </div>
+      {%- endif -%}
+      <div>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        <div class="post-meta">{{ post.date | date: date_format }}</div>
+
+        {%- if post.description -%}
+        {% assign excerpt = post.description %}
+        {% else %}
+        {% assign excerpt = post.content | split: '<p>' | slice: 1 | first | split: '</p>' | first %}
         {%- endif -%}
-        <div>
-          <h3>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
-            </a>
-          </h3>
-          <div class="post-meta">{{ post.date | date: date_format }}</div>
+        {{ excerpt }}
 
-          {%- if post.description -%}
-            {% assign excerpt = post.description %}
-          {% else %}
-            {% assign excerpt = post.content | split: '<p>' | slice: 1 | first | split: '</p>' | first %}
-          {%- endif -%}
-          {{ excerpt }}
+        {% capture post_tags %}
+        {% for post_tag in post.tags %}
+        {{ post_tag[0] }}
+        {% endfor %}
+        {% endcapture %}
 
-          {% capture post_tags %}
-            {% for post_tag in post.tags %}
-              {{ post_tag[0] }}
-            {% endfor %}
-          {% endcapture %}
-          
-          {% assign num_post_tags = post.tags.size %}    
-          {%- if num_post_tags> 0 -%}
-            {% assign sortedtags = post_tags | split:' ' | sort %}
-            <br/><span class="post-meta">Tags:</span>
-            {% for tag in post.tags %}
-              <!-- <a href="{{ site.url }}/tags/{{ tag }}">{{ tag }}</a>{% if forloop.last != true %},{% endif %} -->
-              <a href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>{% if forloop.last != true %},{% endif %}
-            {% endfor %}
-          {%- endif -%}
-        </div>
+        {% assign num_post_tags = post.tags.size %}
+        {%- if num_post_tags> 0 -%}
+        {% assign sortedtags = post_tags | split:' ' | sort %}
+        <br /><span class="post-meta">Tags:</span>
+        {% for tag in post.tags %}
+        <!-- <a href="{{ site.url }}/tags/{{ tag }}">{{ tag }}</a>{% if forloop.last != true %},{% endif %} -->
+        <a href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>{% if forloop.last != true %},{% endif %}
+        {% endfor %}
+        {%- endif -%}
+      </div>
 
-      </li>
-      {%- endfor -%}
-    </ul>
+    </li>
+    {%- endfor -%}
+  </ul>
 
   {%- endif -%}
 
-  </article>
+</article>
 
 <script>
   let imageServiceUrl = 'https://d1co2zgwaj21sl.cloudfront.net/image';
   let maxWidth = '{{ page.max-width }}';
   let pageData = {
-    owner:  '{{site.github.owner_name}}',
-    repo:   '{{site.github.repository_name}}',
+    owner: '{{site.github.owner_name}}',
+    repo: '{{site.github.repository_name}}',
     branch: '{{site.github.source.branch}}',
-    path:   '{{ page.path }}'
+    path: '{{ page.path }}'
   };
   console.log(pageData);
+  /*
   document.querySelectorAll('.post-image').forEach((el) => {
     if (el.dataset?.src) {
       if (el.dataset?.src.startsWith('wc:') || el.dataset?.src.startsWith('http')) {
@@ -171,4 +185,5 @@ layout: default
       }
     }
   });
+  */
 </script>
