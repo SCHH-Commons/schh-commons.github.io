@@ -105,7 +105,9 @@ layout: default
       {%- for post in posts -%}
       <li>
         {%- if post.thumbnail -%}
-
+          <div class="image-container" data-path="{{post.path}}">
+            <img src="{{ post.thumbnail }}" data-src="{{ post.thumbnail }}" alt="{{ post.title }}" class="post-image shadow"/>
+          </div>
         {%- endif -%}
         <div>
           <h3>
