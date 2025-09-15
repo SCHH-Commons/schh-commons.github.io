@@ -5,8 +5,6 @@ order: 6
 published: true
 ---
 
-# About SCHH Commons
-
 **SCHH Commons** is a community-driven initiative created by and for residents of Sun City Hilton Head. The goal is to make it easier for neighbors to discover, share, and use resources that enrich life in our community.
 
 > This site is **not affiliated with Pulte, the developer of Sun City Hilton Head, nor with the HOA or any official organization**. Instead, SCHH Commons is a grassroots effort—built by residents, for residents.

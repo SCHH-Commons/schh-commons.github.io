@@ -151,7 +151,6 @@ pwa:
       # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
 
 paginate: 10
-paginate_path: /blog/page:num
 
 # The base URL of your site
 baseurl: ""
@@ -172,9 +171,6 @@ kramdown:
 
 collections:
   tabs:
-    output: true
-    sort_by: order
-  podcasts:
     output: true
     sort_by: order
 

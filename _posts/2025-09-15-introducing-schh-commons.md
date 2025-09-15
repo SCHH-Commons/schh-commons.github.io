@@ -1,10 +1,11 @@
 ---
-# the default layout is 'page'
-icon: fas fa-info-circle
-order: 4
-published: true
+title: Introducing SCHH Commons
+description: "SCHH Commons is a community-driven initiative created for residents of Sun City Hilton Head. The goal is to make it easier for neighbors to discover, share, and use resources that enrich life in our community.  Learn more about it in this article."
+author: ron
+date: 2025-09-15
 layout: post
-categories: [Blogging, Tutorial]
+published: true
+pin: true
 ---
 
 # About SCHH Commons
