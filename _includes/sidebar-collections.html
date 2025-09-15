@@ -1,0 +1,43 @@
+<div class="sidebar-collections mt-4">
+    <h6 class="sidebar-heading text-muted mb-3">
+        <i class="fas fa-layer-group me-2"></i>Collections
+    </h6>
+
+    <ul class="nav nav-pills flex-column">
+        <li class="nav-item{% if page.url == '/articles/' %}{{ ' active' }}{% endif %}">
+            <a class="nav-link{% if page.url == '/articles/' %}{{ ' active' }}{% endif %}"
+                href="{{ '/articles/' | relative_url }}">
+                <i class="fas fa-newspaper me-2"></i>
+                <span>ARTICLES</span>
+                {% assign articles_count = site.articles | size %}
+                {% if articles_count > 0 %}
+                <span class="badge bg-secondary ms-auto">{{ articles_count }}</span>
+                {% endif %}
+            </a>
+        </li>
+
+        <li class="nav-item{% if page.url == '/maps/' %}{{ ' active' }}{% endif %}">
+            <a class="nav-link{% if page.url == '/maps/' %}{{ ' active' }}{% endif %}"
+                href="{{ '/maps/' | relative_url }}">
+                <i class="fas fa-map-marked-alt me-2"></i>
+                <span>MAPS</span>
+                {% assign maps_count = site.maps | size %}
+                {% if maps_count > 0 %}
+                <span class="badge bg-secondary ms-auto">{{ maps_count }}</span>
+                {% endif %}
+            </a>
+        </li>
+
+        <li class="nav-item{% if page.url == '/podcasts/' %}{{ ' active' }}{% endif %}">
+            <a class="nav-link{% if page.url == '/podcasts/' %}{{ ' active' }}{% endif %}"
+                href="{{ '/podcasts/' | relative_url }}">
+                <i class="fas fa-podcast me-2"></i>
+                <span>PODCASTS</span>
+                {% assign podcasts_count = site.podcasts | size %}
+                {% if podcasts_count > 0 %}
+                <span class="badge bg-secondary ms-auto">{{ podcasts_count }}</span>
+                {% endif %}
+            </a>
+        </li>
+    </ul>
+</div>

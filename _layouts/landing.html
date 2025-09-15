@@ -1,0 +1,76 @@
+---
+layout: default
+refactor: true
+---
+
+<div class="landing-page">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        {% if site.landing_page.hero.image %}
+        <div class="hero-background"
+            style="background-image: url('{{ site.landing_page.hero.image | relative_url }}');">
+            {% endif %}
+            <div class="hero-content">
+                <div class="container">
+                    <h1 class="hero-title">{{ site.landing_page.hero.title | default: site.title }}</h1>
+                    <p class="hero-subtitle">{{ site.landing_page.hero.subtitle | default: site.tagline }}</p>
+                    <p class="hero-description">{{ site.landing_page.hero.description | default: site.description }}</p>
+                    {% if site.landing_page.hero.cta %}
+                    <div class="hero-cta">
+                        <a href="{{ site.landing_page.hero.cta.url | relative_url }}" class="btn btn-primary btn-lg">
+                            {{ site.landing_page.hero.cta.text }}
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% if site.landing_page.hero.image %}
+        </div>
+        {% endif %}
+    </section>
+
+    <!-- Navigation Section -->
+    {% if site.landing_page.navigation %}
+    <section class="navigation-section">
+        <div class="container">
+            <h2 class="section-title">Explore Our Resources</h2>
+            <div class="row">
+                {% for nav_item in site.landing_page.navigation %}
+                <div class="col-md-4 mb-4">
+                    <div class="nav-card text-center">
+                        <div class="nav-icon">
+                            <i class="{{ nav_item.icon }}"></i>
+                        </div>
+                        <h4>{{ nav_item.title }}</h4>
+                        <p>{{ nav_item.description }}</p>
+                        <a href="{{ nav_item.url | relative_url }}" class="btn btn-outline-primary">
+                            Browse {{ nav_item.title }}
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Content Sections -->
+    {% if site.landing_page.sections %}
+    <div class="container">
+        {% for section in site.landing_page.sections %}
+        <section class="landing-section">
+            <h2 class="section-title">{{ section.title }}</h2>
+
+            {% case section.type %}
+            {% when 'articles' %}
+            {% include collection-preview.html collection='articles' limit=section.limit %}
+            {% when 'maps' %}
+            {% include collection-preview.html collection='maps' limit=section.limit %}
+            {% when 'podcasts' %}
+            {% include collection-preview.html collection='podcasts' limit=section.limit %}
+            {% endcase %}
+        </section>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>

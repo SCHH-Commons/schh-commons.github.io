@@ -1,0 +1,98 @@
+<!-- The Side Bar -->
+
+<aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+    <header class="profile-wrapper">
+        <a href="{{ '/' | relative_url }}" id="avatar" class="rounded-circle">
+            {%- if site.avatar != empty and site.avatar -%}
+            {%- capture avatar_url -%}
+            {% include media-url.html src=site.avatar %}
+            {%- endcapture -%}
+            <img src="{{- avatar_url -}}" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+            {%- endif -%}
+        </a>
+
+        <a class="site-title d-block" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <p class="site-subtitle fst-italic mb-0">{{ site.tagline }}</p>
+    </header>
+    <!-- .profile-wrapper -->
+
+    <ul class="nav">
+        <!-- home -->
+        <li class="nav-item{% if page.layout == 'home' or page.layout == 'landing' %}{{ " active" }}{% endif %}">
+            <a href="{{ '/' | relative_url }}" class="nav-link">
+                <i class="fa-fw fas fa-home"></i>
+                <span>{{ site.data.locales[site.lang].tabs.home | default: "HOME" | upcase }}</span>
+            </a>
+        </li>
+
+        <!-- All tabs (including collections) sorted by order -->
+        {% assign all_tabs = site.tabs | sort: 'order' %}
+        <!-- DEBUG: Found {{ site.tabs.size }} tabs: {% for t in site.tabs %}{{ t.title }}({{ t.order }}){% unless forloop.last %}, {% endunless %}{% endfor %} -->
+        {% for tab in all_tabs %}
+        {% if tab.external %}
+        <!-- Collection tab -->
+        <li class="nav-item{% if tab.target_url == page.url %}{{ " active" }}{% endif %}">
+            <a href="{{ tab.target_url | relative_url }}" class="nav-link nav-link-with-badge">
+                <i class="fa-fw {{ tab.icon }}"></i>
+                <span>{{ tab.title | upcase }}</span>
+                {% if tab.content_collection %}
+                {% assign collection_count = site[tab.content_collection] | size %}
+                {% if collection_count > 0 %}
+                <span class="nav-badge">{{ collection_count }}</span>
+                {% endif %}
+                {% endif %}
+            </a>
+        </li>
+        {% else %}
+        <!-- Regular tab -->
+        <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
+            <a href="{{ tab.url }}" class="nav-link">
+                <i class="fa-fw {{ tab.icon }}"></i>
+                {% capture tab_name %}{{ tab.title }}{% endcapture %}
+                <span>{{ tab_name | upcase }}</span>
+            </a>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+
+    <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
+        {% unless site.theme_mode %}
+        <button type="button" class="btn btn-link nav-link" aria-label="Switch Theme" id="mode-toggle">
+            <i class="fas fa-adjust"></i>
+        </button>
+
+        {% if site.data.contact.size > 0 %}
+        <span class="icon-border"></span>
+        {% endif %}
+        {% endunless %}
+
+        {% for entry in site.data.contact %}
+        {% case entry.type %}
+        {% when 'github', 'twitter' %}
+        {%- capture url -%}
+        https://{{ entry.type }}.com/{{ site[entry.type].username }}
+        {%- endcapture -%}
+        {% when 'email' %}
+        {% assign email = site.social.email | split: '@' %}
+        {%- capture url -%}
+        javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
+        {%- endcapture -%}
+        {% when 'rss' %}
+        {% assign url = '/feed.xml' | relative_url %}
+        {% else %}
+        {% assign url = entry.url %}
+        {% endcase %}
+
+        {% if url %}
+        <a href="{{ url }}" aria-label="{{ entry.type }}" {% assign link_types='' %} {% unless entry.noblank %}
+            target="_blank" {% assign link_types=link_types | append: 'noopener ' %} {% endunless %} {% if
+            entry.type=='mastodon' %} {% assign link_types=link_types | append: 'me ' %} {% endif %} {% unless
+            link_types==empty %} rel="{{ link_types | strip }}" {% endunless %}>
+            <i class="{{ entry.icon }}"></i>
+        </a>
+        {% endif %}
+
+        {% endfor %}
+    </div>
+</aside>
