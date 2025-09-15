@@ -1,6 +1,6 @@
 ---
 layout: categories
 icon: fas fa-stream
-order: 1
-published: false
+order: 3
+published: true
 ---

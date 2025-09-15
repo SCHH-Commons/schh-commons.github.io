@@ -4,6 +4,7 @@ title: AI Chatbot
 icon: fas fa-atom
 layout: page
 order: 1
+published: true
 ---
 
 <iframe
