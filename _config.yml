@@ -31,7 +31,6 @@ landing_page:
     title: "Welcome to SCHH Commons"
     subtitle: "Your community resource hub for Sun City Hilton Head"
     description: "Discover events, explore interactive maps, listen to community podcasts, and access helpful resources designed specifically for SCHH residents and prospective residents."
-    image: "/assets/img/hero-bg.jpg"  # Optional hero background image
     cta:
       text: "Explore Resources"
       url: "/articles/"
@@ -39,25 +38,15 @@ landing_page:
     - title: "Articles"
       url: "/articles/"
       icon: "fas fa-newspaper"
-      description: "Community articles and helpful resources"
+      description: "Community articles and helpful resources for SCHH residents and prospective residents"
     - title: "Maps"
       url: "/maps/"
       icon: "fas fa-map-marked-alt"
-      description: "Interactive maps and location guides"
+      description: "Interactive maps and location guides to help you navigate Sun City Hilton Head"
     - title: "Podcasts"
       url: "/podcasts/"
       icon: "fas fa-podcast"
-      description: "Community podcasts and audio content"
-  sections:
-    - title: "Latest Articles"
-      type: "articles"
-      limit: 3
-    - title: "Interactive Maps" 
-      type: "maps"
-      limit: 4
-    - title: "Recent Podcasts"
-      type: "podcasts"
-      limit: 3
+      description: "Community podcasts and audio content featuring local voices and topics"
 
 github:
   username: rsnyder # change to your GitHub username
@@ -185,7 +174,7 @@ pwa:
     deny_paths:
       # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
 
-paginate: 10
+# paginate: 10
 
 # The base URL of your site
 baseurl: ""

@@ -6,59 +6,61 @@ permalink: /maps/
 
 {% assign maps = site.maps | sort: 'date' | reverse %}
 
-<div class="collection-archive">
-  <p class="lead">{{ site.collections.maps.description | default: "Explore interactive maps and location guides for SCHH." }}</p>
-  
-  {% if maps.size > 0 %}
-    <div class="row">
-      {% for map in maps %}
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card h-100">
-          {% if map.image %}
-          <img src="{{ map.image | relative_url }}" class="card-img-top" alt="{{ map.title }}">
-          {% endif %}
-          
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">
-              <a href="{{ map.url | relative_url }}" class="text-decoration-none">
-                {{ map.title }}
-              </a>
-            </h5>
-            
-            {% if map.excerpt %}
-            <p class="card-text">{{ map.excerpt | strip_html | truncatewords: 30 }}</p>
+{% if maps.size > 0 %}
+<div id="post-list">
+  {% for map in maps %}
+  <article class="card-wrapper card">
+    <a href="{{ map.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
+      {% if map.image %}
+      {% assign src = map.image.path | default: map.image %}
+      {% unless src contains '//' %}
+      {% assign src = map.media_subpath | append: '/' | append: src | replace: '//', '/' %}
+      {% endunless %}
+
+      <div class="col-md-5">
+        <div
+          style="background-image: url('{{ src | relative_url }}'); height: 200px; background-size: cover; background-position: center; border-radius: 0.375rem;">
+        </div>
+      </div>
+      {% assign card_body_col = '7' %}
+      {% else %}
+      {% assign card_body_col = '12' %}
+      {% endif %}
+
+      <div class="col-md-{{ card_body_col }}">
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">{{ map.title }}</h1>
+
+          <div class="card-text content mt-0 mb-3">
+            {% if map.description %}
+            <p>{{ map.description }}</p>
+            {% else %}
+            <p>{{ map.content | strip_html | truncatewords: 30 }}</p>
             {% endif %}
-            
-            <div class="mt-auto">
-              <div class="d-flex justify-content-between align-items-center flex-wrap">
-                <small class="text-muted">
-                  {% include datetime.html date=map.date %}
-                </small>
-                
-                <div class="mt-2">
-                  {% if map.categories.size > 0 %}
-                    {% for category in map.categories limit: 2 %}
-                    <span class="badge bg-secondary me-1">{{ category }}</span>
-                    {% endfor %}
-                  {% endif %}
-                  
-                  {% if map.tags.size > 0 %}
-                    {% for tag in map.tags limit: 2 %}
-                    <span class="badge bg-outline-primary me-1">{{ tag }}</span>
-                    {% endfor %}
-                  {% endif %}
-                </div>
-              </div>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <time>{% include datetime.html date=map.date format='%b %-d, %Y' %}</time>
+
+              {% if map.categories.size > 0 %}
+              <i class="far fa-folder-open fa-fw me-1"></i>
+              <span class="categories">
+                {% for category in map.categories %}
+                {{ category }}
+                {%- unless forloop.last -%}, {% endunless -%}
+                {% endfor %}
+              </span>
+              {% endif %}
             </div>
           </div>
         </div>
       </div>
-      {% endfor %}
-    </div>
-  {% else %}
-    <div class="alert alert-info">
-      <h5>No maps yet</h5>
-      <p class="mb-0">Check back soon for interactive maps and location guides.</p>
-    </div>
-  {% endif %}
+    </a>
+  </article>
+  {% endfor %}
 </div>
+{% else %}
+<p>No maps available yet.</p>
+{% endif %}

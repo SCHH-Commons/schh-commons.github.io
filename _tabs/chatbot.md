@@ -1,6 +1,6 @@
 ---
 # the default layout is 'page'
-title: AI Chatbot
+title: AI Assistant
 icon: fas fa-atom
 layout: page
 order: 1

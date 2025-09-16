@@ -4,73 +4,55 @@ refactor: true
 ---
 
 <div class="landing-page">
-    <!-- Hero Section -->
-    <section class="hero-section">
-        {% if site.landing_page.hero.image %}
-        <div class="hero-background"
-            style="background-image: url('{{ site.landing_page.hero.image | relative_url }}');">
-            {% endif %}
-            <div class="hero-content">
-                <div class="container">
-                    <h1 class="hero-title">{{ site.landing_page.hero.title | default: site.title }}</h1>
-                    <p class="hero-subtitle">{{ site.landing_page.hero.subtitle | default: site.tagline }}</p>
-                    <p class="hero-description">{{ site.landing_page.hero.description | default: site.description }}</p>
-                    {% if site.landing_page.hero.cta %}
-                    <div class="hero-cta">
-                        <a href="{{ site.landing_page.hero.cta.url | relative_url }}" class="btn btn-primary btn-lg">
-                            {{ site.landing_page.hero.cta.text }}
-                        </a>
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
-            {% if site.landing_page.hero.image %}
-        </div>
-        {% endif %}
-    </section>
-
-    <!-- Navigation Section -->
-    {% if site.landing_page.navigation %}
-    <section class="navigation-section">
-        <div class="container">
-            <h2 class="section-title">Explore Our Resources</h2>
-            <div class="row">
-                {% for nav_item in site.landing_page.navigation %}
-                <div class="col-md-4 mb-4">
-                    <div class="nav-card text-center">
-                        <div class="nav-icon">
-                            <i class="{{ nav_item.icon }}"></i>
-                        </div>
-                        <h4>{{ nav_item.title }}</h4>
-                        <p>{{ nav_item.description }}</p>
-                        <a href="{{ nav_item.url | relative_url }}" class="btn btn-outline-primary">
-                            Browse {{ nav_item.title }}
-                        </a>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-    {% endif %}
-
-    <!-- Content Sections -->
-    {% if site.landing_page.sections %}
-    <div class="container">
-        {% for section in site.landing_page.sections %}
-        <section class="landing-section">
-            <h2 class="section-title">{{ section.title }}</h2>
-
-            {% case section.type %}
-            {% when 'articles' %}
-            {% include collection-preview.html collection='articles' limit=section.limit %}
-            {% when 'maps' %}
-            {% include collection-preview.html collection='maps' limit=section.limit %}
-            {% when 'podcasts' %}
-            {% include collection-preview.html collection='podcasts' limit=section.limit %}
-            {% endcase %}
-        </section>
-        {% endfor %}
+  <!-- Hero Section -->
+  <section class="hero-section mb-5">
+    <div class="text-center">
+      <h1 class="display-4 mb-3">{{ page.hero.title | default: site.title }}</h1>
+      <p class="lead mb-3">{{ page.hero.subtitle | default: site.tagline }}</p>
+      {% if page.hero.description %}
+      <p class="mb-4">{{ page.hero.description }}</p>
+      {% endif %}
+      {% if page.hero.cta %}
+      <a href="{{ page.hero.cta.url | relative_url }}" class="btn btn-primary btn-lg">
+        {{ page.hero.cta.text }}
+      </a>
+      {% endif %}
     </div>
-    {% endif %}
+  </section>
+
+  <!-- Page Content -->
+  {% if content and content != empty %}
+  <section class="content-section mb-5">
+    <div class="prose">
+      {{ content }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Resources Section -->
+  {% if page.resources %}
+  <section class="resources-section">
+    <div class="text-center mb-5">
+      <h2 class="h1 mb-3">Explore Our Resources</h2>
+    </div>
+    
+    <div class="row">
+      {% for resource in page.resources %}
+      <div class="col-md-4 mb-4">
+        <article class="card h-100">
+          <a href="{{ resource.url | relative_url }}" class="text-decoration-none">
+            <div class="card-body text-center">
+              <div class="mb-3">
+                <i class="{{ resource.icon }} fa-3x text-primary"></i>
+              </div>
+              <h3 class="card-title h5 mb-3">{{ resource.title }}</h3>
+              <p class="card-text text-muted">{{ resource.description }}</p>
+            </div>
+          </a>
+        </article>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
 </div>

@@ -1,7 +1,7 @@
 ---
 title: Maps
 icon: fas fa-map-marked-alt
-order: 3
+order: 4
 content_collection: maps
 external: true
 target_url: /maps/

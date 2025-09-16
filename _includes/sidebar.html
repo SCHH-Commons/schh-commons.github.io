@@ -35,12 +35,6 @@
             <a href="{{ tab.target_url | relative_url }}" class="nav-link nav-link-with-badge">
                 <i class="fa-fw {{ tab.icon }}"></i>
                 <span>{{ tab.title | upcase }}</span>
-                {% if tab.content_collection %}
-                {% assign collection_count = site[tab.content_collection] | size %}
-                {% if collection_count > 0 %}
-                <span class="nav-badge">{{ collection_count }}</span>
-                {% endif %}
-                {% endif %}
             </a>
         </li>
         {% else %}
