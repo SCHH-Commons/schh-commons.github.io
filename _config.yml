@@ -283,7 +283,7 @@ exclude:
   - "*.config.js"
   - "package*.json"
 
-jjekyll-archives:
+jekyll-archives:
   enabled: [categories, tags]
   layouts:
     category: category
