@@ -4,9 +4,9 @@ description: "Our first episode welcoming new residents and sharing essential ti
 date: 2024-01-25
 categories: [community, newcomers]
 tags: [podcast, welcome, tips]
-image: /assets/img/podcast-cover.jpg
+#image: /assets/img/podcast-cover.jpg
 duration: "25 minutes"
-audio_file: /assets/audio/community-chat-01.mp3
+audio_file: /assets/audio/SunSations_September_2025
 ---
 
 In this inaugural episode, we discuss...
