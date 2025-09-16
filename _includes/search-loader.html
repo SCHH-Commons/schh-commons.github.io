@@ -15,38 +15,38 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const searchData = [
-      {% for article in site.articles %}
-      {
-        "title": {{ article.title | jsonify }},
-        "url": {{ article.url | relative_url | jsonify }},
-        "categories": {{ article.categories | join: ", " | jsonify }},
-        "tags": {{ article.tags | join: ", " | jsonify }},
-        "content": {{ article.content | strip_html | strip_newlines | truncatewords: 200 | jsonify }}
-      }{% unless forloop.last %},{% endunless %}
-      {% endfor %}{% for map in site.maps %},
-      {
-        "title": {{ map.title | jsonify }},
-        "url": {{ map.url | relative_url | jsonify }},
-        "categories": {{ map.categories | join: ", " | jsonify }},
-        "tags": {{ map.tags | join: ", " | jsonify }},
-        "content": {{ map.content | strip_html | strip_newlines | truncatewords: 200 | jsonify }}
-      }{% endfor %}{% for podcast in site.podcasts %},
-      {
-        "title": {{ podcast.title | jsonify }},
-        "url": {{ podcast.url | relative_url | jsonify }},
-        "categories": {{ podcast.categories | join: ", " | jsonify }},
-        "tags": {{ podcast.tags | join: ", " | jsonify }},
-        "content": {{ podcast.content | strip_html | strip_newlines | truncatewords: 200 | jsonify }}
-      }{% endfor %}{% for tab in site.tabs %}{% if tab.content and tab.content != "" %},
-      {
-        "title": {{ tab.title | jsonify }},
-        "url": {{ tab.url | relative_url | jsonify }},
-        "categories": "",
-        "tags": "",
-        "content": {{ tab.content | strip_html | strip_newlines | truncatewords: 200 | jsonify }}
-      }{% endif %}{% endfor %}
-    ];
+  const searchData = [
+    {% for post in site.posts %}
+    {
+      "title": {{ post.title | jsonify }},
+      "url": {{ post.url | relative_url | jsonify }},
+      "categories": {{ post.categories | join: ", " | jsonify }},
+      "tags": {{ post.tags | join: ", " | jsonify }},
+      "content": {{ post.content | strip_html | strip_newlines | truncatewords: 200 | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}{% for map in site.maps %},
+    {
+      "title": {{ map.title | jsonify }},
+      "url": {{ map.url | relative_url | jsonify }},
+      "categories": "",
+      "tags": "",
+      "content": {{ map.content | strip_html | strip_newlines | truncatewords: 200 | jsonify }}
+    }{% endfor %}{% for podcast in site.podcasts %},
+    {
+      "title": {{ podcast.title | jsonify }},
+      "url": {{ podcast.url | relative_url | jsonify }},
+      "categories": "",
+      "tags": "",
+      "content": {{ podcast.content | strip_html | strip_newlines | truncatewords: 200 | jsonify }}
+    }{% endfor %}{% for tab in site.tabs %}{% if tab.content and tab.content != "" %},
+    {
+      "title": {{ tab.title | jsonify }},
+      "url": {{ tab.url | relative_url | jsonify }},
+      "categories": "",
+      "tags": "",
+      "content": {{ tab.content | strip_html | strip_newlines | truncatewords: 200 | jsonify }}
+    }{% endif %}{% endfor %}
+  ];
 
   SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),

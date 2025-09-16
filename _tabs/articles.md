@@ -1,8 +1,7 @@
 ---
 title: Articles
 icon: fas fa-newspaper
-order: 4
-content_collection: articles
+order: 2
 external: true
 target_url: /articles/
 permalink: /nav/articles/

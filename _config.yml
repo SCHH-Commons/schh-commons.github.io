@@ -184,12 +184,6 @@ collections:
   tabs:
     output: true
     sort_by: order
-  articles:
-    output: true
-    sort_by: date
-    title: "Articles"
-    description: "Community articles and helpful resources"
-    permalink: /articles/:name/
   maps:
     output: true
     sort_by: date
@@ -224,13 +218,11 @@ defaults:
     values:
       layout: page
       permalink: /:title/
-  - scope:
-      path: ""
-      type: articles
     values:
       layout: post
       comments: true
       toc: true
+      permalink: /posts/:title/
   - scope:
       path: ""
       type: maps
