@@ -29,6 +29,34 @@ resources:
     description: "Community podcasts and audio content featuring local voices and topics"
 ---
 
+<style>
+
+    /* Landing page specific overrides */
+    .text-primary {
+        color: #2F4F4F  !important;
+    }
+    .card-title {
+        color: #2F4F4F  !important;
+    }
+    .btn-primary {
+        background-color: #2F4F4F  !important;
+        border-color: #2F4F4F  !important;
+    }
+    .btn-primary:hover {
+        background-color: #A0524D !important;
+        border-color: #A0524D !important;
+        box-shadow: 0 4px 8px rgba(90, 19, 17, 0.2);
+    }
+    .card:hover {
+        border-color: #A0524D !important;
+        box-shadow: 0 4px 8px rgba(90, 19, 17, 0.2);
+    }
+    .card:hover i, .card:hover .card-title {
+        color: #A0524D !important;
+    }
+
+</style>
+
 ## About SCHH Commons
 
 SCHH Commons is a community-sponsored resource hub designed specifically for Sun City Hilton Head residents and prospective residents. Our mission is to make life in SCHH easier to navigate by providing clear answers, helpful resources, and community connections all powered by modern technology.
