@@ -282,3 +282,10 @@ exclude:
   - purgecss.js
   - "*.config.js"
   - "package*.json"
+
+jekyll-archives:
+  enabled: [categories]  # Remove 'tags' from this list
+  layouts:
+    category: category
+  permalinks:
+    category: /categories/:name/
