@@ -52,7 +52,7 @@ permalink: /podcasts/
                             <time>{% include datetime.html date=podcast.date format='%b %-d, %Y' %}</time>
 
                             {% if podcast.categories.size > 0 %}
-                            <i class="far fa-folder-open fa-fw me-1"></i>
+                            <i class="far fa-folder-open fa-fw me-1 ms-2"></i>
                             <span class="categories">
                                 {% for category in podcast.categories %}
                                 {{ category }}
@@ -60,6 +60,17 @@ permalink: /podcasts/
                                 {% endfor %}
                             </span>
                             {% endif %}
+
+                            {% if podcast.tags.size > 0 %}
+                            <i class="fas fa-tags fa-fw me-1 ms-2"></i>
+                            <span class="tags">
+                                {% for tag in podcast.tags %}
+                                {{ tag }}
+                                {%- unless forloop.last -%}, {% endunless -%}
+                                {% endfor %}
+                            </span>
+                            {% endif %}
+
                         </div>
                     </div>
                 </div>

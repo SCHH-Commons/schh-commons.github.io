@@ -38,16 +38,17 @@
   }
   
   .btn-primary:hover {
-    background-color: #5a1311 !important;
-    border-color: #5a1311 !important;
+    background-color: #A0524D !important;
+    border-color: #A0524D !important;
+    box-shadow: 0 4px 8px rgba(90, 19, 17, 0.2);
   }
 
   .card:hover {
-    border-color: #5a1311 !important;
+    border-color: #A0524D !important;
     box-shadow: 0 4px 8px rgba(90, 19, 17, 0.2);
   }
   .card:hover i, .card:hover .card-title {
-    color: #5a1311 !important;
+    color: #A0524D !important;
   }
 
 }
