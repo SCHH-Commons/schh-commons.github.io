@@ -8,11 +8,11 @@ hero:
     url: "/chatbot"
 resources:
   - title: "AI Chatbot"
-    url: "/chatbot/"
+    url: "/chatbot"
     icon: "fas fa-robot"
     description: "Get instant answers to your SCHH questions with our AI-powered assistant trained on community knowledge"
   - title: "Events Calendar"
-    url: "/events/"
+    url: "/events"
     icon: "fas fa-calendar-alt"
     description: "Stay up-to-date with community events, activities, and important dates in Sun City Hilton Head"
   - title: "Articles"
