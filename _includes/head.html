@@ -60,8 +60,7 @@
 
   <script>
     (function () {
-      var isStandalone = window.matchMedia &&
-        window.matchMedia('(display-mode: standalone)').matches;
+      var isStandalone = window.matchMedia && window.matchMedia('(display-mode: standalone)').matches;
       // iOS legacy A2HS
       if (!isStandalone && typeof navigator.standalone === 'boolean') {
         isStandalone = navigator.standalone === true;
