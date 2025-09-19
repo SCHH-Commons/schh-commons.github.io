@@ -2,11 +2,8 @@
 title: "Community Facilities Map"
 description: "Interactive map showing all community facilities and amenities."
 date: 2024-01-20
-# image: /assets/img/facilities-map.jpg
-map_embed: "<iframe src='...' width='100%' height='400'></iframe>"
+layout: map-post
 ---
-
-Explore all the amazing facilities SCHH has to offer...
 
 <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx7YrWFehCJR6T_ko2EhO_kpwfUzviVIs&callback=console.debug&libraries=maps,marker&v=beta"></script>
 
@@ -28,23 +25,38 @@ Explore all the amazing facilities SCHH has to offer...
     }
     #main-wrapper,
     #main-wrapper .container,
-    #main-wrapper .container main,
-    #main-wrapper .container main article,
-    #main-wrapper .container main article .content {
+    #main-wrapper .container div:first-of-type,
+    #main-wrapper .container div:first-of-type main,
+    #main-wrapper .container div:first-of-type main article,
+    #main-wrapper .container div:first-of-type main article .content {
         min-height: 0;
         margin-top: 0;
         height: 100%;
     }
-    iframe {
-        margin-left: -1em;
-        width: calc(100% + 2em);
-        height: 100%;
+    #topbar-title,
+    #main-wrapper .container div:nth-of-type(2) {
+        display: none;
     }
-
-    #tail-wrapper footer {
+    #main-wrapper .container div:first-of-type main article header h1 {
         margin-top: 0;
+    }
+    #main-wrapper .container div:first-of-type main article header p.post-desc {
+        line-height: 1.4;
+        margin-bottom: 1em !important;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+    }
+    article.px-1 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .content {
         padding: 0;
-        height: 4rem;
+    }
+    #tail-wrapper nav.post-navigation {
+        display: none !important;
     }
 
     /* non-PWA mobile styles */
@@ -65,15 +77,8 @@ Explore all the amazing facilities SCHH has to offer...
         height: 100%;
     }
 
-    /* Optional: Makes the sample page fill the window. */
-    html,
-    body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
 </style>
 
-<gmp-map center="32.301314300250375,-80.96083639954215" zoom="14" map-id="DEMO_MAP_ID">
+<gmp-map center="32.301314300250375,-80.96083639954215" zoom="13" map-id="map">
     <gmp-advanced-marker position="40.12150192260742,-100.45039367675781" title="My location"></gmp-advanced-marker>
 </gmp-map>
