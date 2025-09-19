@@ -90,8 +90,8 @@ layout: map-post
     const initMap = async () => {
         const mapElement = document.getElementById('map');
         await customElements.whenDefined('gmp-map');
-        map = mapElement.innerMap; // Get the map instance
-        dataLayer = map.data;  // Initialize the data layer
+        map = mapElement.innerMap;
+        dataLayer = map.data;
     }
 
     const loadGeoJSON = async (geoJsonUrl) => {
@@ -99,11 +99,10 @@ layout: map-post
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const geoJsonData = await response.json();
         const features = dataLayer.addGeoJson(geoJsonData);
-        return features
+        return features;
     }
     
     const fitBounds = () => {
-        // Fit the map bounds to the loaded data
         const bounds = new google.maps.LatLngBounds();
         dataLayer.forEach(function(feature) {
             const geometry = feature.getGeometry();
@@ -126,14 +125,20 @@ layout: map-post
         });
     }
 
-    await initMap()
-    await loadGeoJSON('https://raw.githubusercontent.com/rsnyder/media/main/geojson/Sun_City,_Hilton_Head.geojson')
-    // fitBounds()
-    applyStyle({
-        fillColor: '#FF0000',
-        fillOpacity: 0.3,
-        strokeColor: '#FF0000',
-        strokeWeight: 1
-    })
-
+    // Wrap the main execution in an async IIFE
+    (async () => {
+        try {
+            await initMap();
+            await loadGeoJSON('https://raw.githubusercontent.com/rsnyder/media/main/geojson/Sun_City,_Hilton_Head.geojson');
+            // fitBounds();
+            applyStyle({
+                fillColor: '#FF0000',
+                fillOpacity: 0.3,
+                strokeColor: '#FF0000',
+                strokeWeight: 1
+            });
+        } catch (error) {
+            console.error('Error initializing map:', error);
+        }
+    })();
 </script>
