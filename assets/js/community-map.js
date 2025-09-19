@@ -43,6 +43,7 @@ const applyStyle = (style) => {
     try {
         await initMap();
         await loadGeoJSON('https://raw.githubusercontent.com/rsnyder/media/main/geojson/Sun_City,_Hilton_Head.geojson');
+        await loadGeoJSON('https://raw.githubusercontent.com/rsnyder/media/main/geojson/SCHH-Amenity-Centers.geojson');
         applyStyle({
             fillColor: '#FF0000',
             fillOpacity: 0.3,
