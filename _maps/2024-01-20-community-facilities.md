@@ -83,6 +83,8 @@ layout: map-post
     <gmp-advanced-marker position="40.12150192260742,-100.45039367675781" title="My location"></gmp-advanced-marker>
 </gmp-map>
 
+{% raw %}
+
 <script type="module">
     let map;
     let dataLayer;
@@ -142,3 +144,4 @@ layout: map-post
         }
     })();
 </script>
+{% endraw %}
