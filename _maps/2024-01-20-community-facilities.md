@@ -82,13 +82,19 @@ layout: map-post
 <script type="module">
     import { initMap, loadGeoJSON, fitBounds, applyStyle } from '{{ '/assets/js/gmap.js' | relative_url }}';
     
-    const map = await initMap('map')
-    await loadGeoJSON(map, 'https://raw.githubusercontent.com/rsnyder/media/main/geojson/Sun_City,_Hilton_Head.geojson');
-    await loadGeoJSON(map, 'https://raw.githubusercontent.com/rsnyder/media/main/geojson/SCHH-Amenity-Centers.geojson');
-    applyStyle(map, {
-        fillColor: '#FF0000',
-        fillOpacity: 0.3,
-        strokeColor: '#FF0000',
-        strokeWeight: 1
-    });
+    (async () => {
+        try {    
+            const map = await initMap('map')
+            await loadGeoJSON(map, 'https://raw.githubusercontent.com/rsnyder/media/main/geojson/Sun_City,_Hilton_Head.geojson');
+            await loadGeoJSON(map, 'https://raw.githubusercontent.com/rsnyder/media/main/geojson/SCHH-Amenity-Centers.geojson');
+            applyStyle(map, {
+                fillColor: '#FF0000',
+                fillOpacity: 0.3,
+                strokeColor: '#FF0000',
+                strokeWeight: 1
+            });
+        } catch (error) {
+            console.error('Error initializing map:', error);
+        }
+    })();
 </script>
