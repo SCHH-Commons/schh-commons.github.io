@@ -1,26 +1,22 @@
 import 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAx7YrWFehCJR6T_ko2EhO_kpwfUzviVIs&callback=console.debug&libraries=maps,marker&v=beta'
 
-let map;
-let dataLayer;
-
-const initMap = async () => {
-    const mapElement = document.getElementById('map');
+const initMap = async (id) => {
+    const mapElement = document.getElementById(id || 'map');
     await customElements.whenDefined('gmp-map');
-    map = mapElement.innerMap;
-    dataLayer = map.data;
+    return mapElement.innerMap;
 }
 
-const loadGeoJSON = async (geoJsonUrl) => {
+const loadGeoJSON = async (map, geoJsonUrl) => {
     const response = await fetch(geoJsonUrl);
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     const geoJsonData = await response.json();
-    const features = dataLayer.addGeoJson(geoJsonData);
+    const features = map.data.addGeoJson(geoJsonData);
     return features;
 }
 
-const fitBounds = () => {
+const fitBounds = (map) => {
     const bounds = new google.maps.LatLngBounds();
-    dataLayer.forEach(function (feature) {
+    map.data.forEach(function (feature) {
         const geometry = feature.getGeometry();
         geometry.forEachLatLng(function (latLng) {
             bounds.extend(latLng);
@@ -29,8 +25,8 @@ const fitBounds = () => {
     map.fitBounds(bounds);
 }
 
-const applyStyle = (style) => {
-    dataLayer.setStyle((feature) => {
+const applyStyle = (map, style) => {
+    map.data.setStyle((feature) => {
         return {
             fillColor: style.fillColor,
             fillOpacity: style.fillOpacity,
@@ -41,21 +37,4 @@ const applyStyle = (style) => {
     });
 }
 
-const loadMap = async () => {
-    console.log('Loading map...');
-    try {
-        await initMap();
-        await loadGeoJSON('https://raw.githubusercontent.com/rsnyder/media/main/geojson/Sun_City,_Hilton_Head.geojson');
-        await loadGeoJSON('https://raw.githubusercontent.com/rsnyder/media/main/geojson/SCHH-Amenity-Centers.geojson');
-        applyStyle({
-            fillColor: '#FF0000',
-            fillOpacity: 0.3,
-            strokeColor: '#FF0000',
-            strokeWeight: 1
-        });
-    } catch (error) {
-        console.error('Error initializing map:', error);
-    }
-};
-
-export { loadMap };
+export { initMap, loadGeoJSON, fitBounds, applyStyle };

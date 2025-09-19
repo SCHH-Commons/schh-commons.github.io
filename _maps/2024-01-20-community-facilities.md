@@ -79,11 +79,16 @@ layout: map-post
 
 <gmp-map center="32.3044810,-80.9572716" zoom="12.5" id="map"></gmp-map>
 
-<!-- <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx7YrWFehCJR6T_ko2EhO_kpwfUzviVIs&callback=console.debug&libraries=maps,marker&v=beta"></script> -->
-
-<!-- <script type="module" src="{{ '/assets/js/community-map.js' | relative_url }}"></script> -->
-
 <script type="module">
-    import { loadMap } from '{{ '/assets/js/gmap.js' | relative_url }}';
-    loadMap()
+    import { initMap, loadGeoJSON, fitBounds, applyStyle } from '{{ '/assets/js/gmap.js' | relative_url }}';
+    
+    const map = await initMap('map')
+    await loadGeoJSON(map, 'https://raw.githubusercontent.com/rsnyder/media/main/geojson/Sun_City,_Hilton_Head.geojson');
+    await loadGeoJSON(map, 'https://raw.githubusercontent.com/rsnyder/media/main/geojson/SCHH-Amenity-Centers.geojson');
+    applyStyle(map, {
+        fillColor: '#FF0000',
+        fillOpacity: 0.3,
+        strokeColor: '#FF0000',
+        strokeWeight: 1
+    });
 </script>
