@@ -79,6 +79,61 @@ layout: map-post
 
 </style>
 
-<gmp-map center="32.301314300250375,-80.96083639954215" zoom="13" map-id="map">
+<gmp-map center="32.3044810,-80.9572716" zoom="12.5" map-id="map" id="map">
     <gmp-advanced-marker position="40.12150192260742,-100.45039367675781" title="My location"></gmp-advanced-marker>
 </gmp-map>
+
+<script type="module">
+    let map;
+    let dataLayer;
+
+    const initMap = async () => {
+        const mapElement = document.getElementById('map');
+        await customElements.whenDefined('gmp-map');
+        map = mapElement.innerMap; // Get the map instance
+        dataLayer = map.data;  // Initialize the data layer
+    }
+
+    const loadGeoJSON = async (geoJsonUrl) => {
+        const response = await fetch(geoJsonUrl);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const geoJsonData = await response.json();
+        const features = dataLayer.addGeoJson(geoJsonData);
+        return features
+    }
+    
+    const fitBounds = () => {
+        // Fit the map bounds to the loaded data
+        const bounds = new google.maps.LatLngBounds();
+        dataLayer.forEach(function(feature) {
+            const geometry = feature.getGeometry();
+            geometry.forEachLatLng(function(latLng) {
+                bounds.extend(latLng);
+            });
+        });
+        map.fitBounds(bounds);
+    }
+
+    const applyStyle = (style) => {            
+        dataLayer.setStyle((feature) => {
+            return {
+                fillColor: style.fillColor,
+                fillOpacity: style.fillOpacity,
+                strokeColor: style.strokeColor,
+                strokeWeight: style.strokeWeight,
+                clickable: true
+            };
+        });
+    }
+
+    await initMap()
+    await loadGeoJSON('https://raw.githubusercontent.com/rsnyder/media/main/geojson/Sun_City,_Hilton_Head.geojson')
+    // fitBounds()
+    applyStyle({
+        fillColor: '#FF0000',
+        fillOpacity: 0.3,
+        strokeColor: '#FF0000',
+        strokeWeight: 1
+    })
+
+</script>
