@@ -1,3 +1,5 @@
+import 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAx7YrWFehCJR6T_ko2EhO_kpwfUzviVIs&callback=console.debug&libraries=maps,marker&v=beta'
+
 let map;
 let dataLayer;
 
@@ -39,7 +41,8 @@ const applyStyle = (style) => {
     });
 }
 
-(async () => {
+const loadMap = async () => {
+    console.log('Loading map...');
     try {
         await initMap();
         await loadGeoJSON('https://raw.githubusercontent.com/rsnyder/media/main/geojson/Sun_City,_Hilton_Head.geojson');
@@ -53,4 +56,6 @@ const applyStyle = (style) => {
     } catch (error) {
         console.error('Error initializing map:', error);
     }
-})();
+};
+
+export { loadMap };

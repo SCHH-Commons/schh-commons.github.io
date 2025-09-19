@@ -77,11 +77,13 @@ layout: map-post
 
 </style>
 
-<gmp-map center="32.3044810,-80.9572716" zoom="12.5" map-id="map" id="map">
-    <gmp-advanced-marker position="40.12150192260742,-100.45039367675781" title="My location"></gmp-advanced-marker>
-</gmp-map>
+<gmp-map center="32.3044810,-80.9572716" zoom="12.5" id="map"></gmp-map>
 
-<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx7YrWFehCJR6T_ko2EhO_kpwfUzviVIs&callback=console.debug&libraries=maps,marker&v=beta"></script>
+<!-- <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx7YrWFehCJR6T_ko2EhO_kpwfUzviVIs&callback=console.debug&libraries=maps,marker&v=beta"></script> -->
 
-<script type="module" src="{{ '/assets/js/community-map.js' | relative_url }}"></script>
+<!-- <script type="module" src="{{ '/assets/js/community-map.js' | relative_url }}"></script> -->
 
+<script type="module">
+    import { loadMap } from '{{ '/assets/js/gmap.js' | relative_url }}';
+    loadMap()
+</script>
