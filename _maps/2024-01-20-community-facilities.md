@@ -5,8 +5,6 @@ date: 2024-01-20
 layout: map-post
 ---
 
-<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx7YrWFehCJR6T_ko2EhO_kpwfUzviVIs&callback=console.debug&libraries=maps,marker&v=beta"></script>
-
 <style>
     * {
         box-sizing: border-box;
@@ -83,65 +81,7 @@ layout: map-post
     <gmp-advanced-marker position="40.12150192260742,-100.45039367675781" title="My location"></gmp-advanced-marker>
 </gmp-map>
 
-{% raw %}
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx7YrWFehCJR6T_ko2EhO_kpwfUzviVIs&callback=console.debug&libraries=maps,marker&v=beta"></script>
 
-<script type="module">
-    let map;
-    let dataLayer;
+<script type="module" src="{{ '/assets/js/community-map.js' | relative_url }}"></script>
 
-    const initMap = async () => {
-        const mapElement = document.getElementById('map');
-        await customElements.whenDefined('gmp-map');
-        map = mapElement.innerMap;
-        dataLayer = map.data;
-    }
-
-    const loadGeoJSON = async (geoJsonUrl) => {
-        const response = await fetch(geoJsonUrl);
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        const geoJsonData = await response.json();
-        const features = dataLayer.addGeoJson(geoJsonData);
-        return features;
-    }
-    
-    const fitBounds = () => {
-        const bounds = new google.maps.LatLngBounds();
-        dataLayer.forEach(function(feature) {
-            const geometry = feature.getGeometry();
-            geometry.forEachLatLng(function(latLng) {
-                bounds.extend(latLng);
-            });
-        });
-        map.fitBounds(bounds);
-    }
-
-    const applyStyle = (style) => {            
-        dataLayer.setStyle((feature) => {
-            return {
-                fillColor: style.fillColor,
-                fillOpacity: style.fillOpacity,
-                strokeColor: style.strokeColor,
-                strokeWeight: style.strokeWeight,
-                clickable: true
-            };
-        });
-    }
-
-    // Wrap the main execution in an async IIFE
-    (async () => {
-        try {
-            await initMap();
-            await loadGeoJSON('https://raw.githubusercontent.com/rsnyder/media/main/geojson/Sun_City,_Hilton_Head.geojson');
-            // fitBounds();
-            applyStyle({
-                fillColor: '#FF0000',
-                fillOpacity: 0.3,
-                strokeColor: '#FF0000',
-                strokeWeight: 1
-            });
-        } catch (error) {
-            console.error('Error initializing map:', error);
-        }
-    })();
-</script>
-{% endraw %}
