@@ -79,10 +79,10 @@ layout: map-post
 
 <gmp-map center="32.3044810,-80.9572716" zoom="12.5" id="map"></gmp-map>
 
-
 <script type="module">
-    import { initMap, loadGeoJSON, fitBounds, applyStyle } from '{{ '/assets/js/gmap.js' | relative_url }}';
-    
+    import { getMap, loadGeoJSON, fitBounds, applyStyle } from '{{ '/assets/js/gmap.js' | relative_url }}';
+    const map = getmap('map')
+    console.log(map)
     /*
     (async () => {
         try {    

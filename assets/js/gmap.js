@@ -1,6 +1,6 @@
 import 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAx7YrWFehCJR6T_ko2EhO_kpwfUzviVIs&callback=console.debug&libraries=maps,marker&v=beta'
 
-const initMap = async (id) => {
+const getMap = async (id) => {
     const mapElement = document.getElementById(id || 'map');
     await customElements.whenDefined('gmp-map');
     return mapElement.innerMap;
@@ -37,4 +37,4 @@ const applyStyle = (map, style) => {
     });
 }
 
-export { initMap, loadGeoJSON, fitBounds, applyStyle };
+export { getMap, loadGeoJSON, fitBounds, applyStyle };
