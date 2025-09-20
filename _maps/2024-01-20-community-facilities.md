@@ -85,8 +85,8 @@ layout: map-post
     (async () => {
         try {    
             const map = await getMap('map');
-            await loadGeoJSON(map, 'https://raw.githubusercontent.com/rsnyder/media/main/geojson/Sun_City,_Hilton_Head.geojson');
-            await loadGeoJSON(map, 'https://raw.githubusercontent.com/rsnyder/media/main/geojson/SCHH-Amenity-Centers.geojson');
+            await loadGeoJSON(map, 'https://raw.githubusercontent.com/schh-commons/knowledge-base/main/geojson/Sun_City,_Hilton_Head.geojson');
+            await loadGeoJSON(map, 'https://raw.githubusercontent.com/schh-commons/knowledge-base/main/geojson/Amenity_Locations.geojson');
             applyStyle(map, {
                 fillColor: '#FF0000',
                 fillOpacity: 0.3,
