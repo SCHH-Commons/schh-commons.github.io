@@ -81,8 +81,8 @@ layout: map-post
 
 <script type="module">
     import { getMap, loadGeoJSON, fitBounds, applyStyle } from '{{ '/assets/js/gmap.js' | relative_url }}';
-    const map = getmap('map')
-    console.log(map)
+    const map = getmap('map');
+    console.log(map);
     /*
     (async () => {
         try {    
