@@ -81,12 +81,12 @@ layout: map-post
 
 <script type="module">
     import { getMap, loadGeoJSON, fitBounds, applyStyle } from '{{ '/assets/js/gmap.js' | relative_url }}';
-    const map = getmap('map');
+    const map = getMap('map');
     console.log(map);
     /*
     (async () => {
         try {    
-            const map = await initMap('map')
+            const map = await getMap('map');
             await loadGeoJSON(map, 'https://raw.githubusercontent.com/rsnyder/media/main/geojson/Sun_City,_Hilton_Head.geojson');
             await loadGeoJSON(map, 'https://raw.githubusercontent.com/rsnyder/media/main/geojson/SCHH-Amenity-Centers.geojson');
             applyStyle(map, {
