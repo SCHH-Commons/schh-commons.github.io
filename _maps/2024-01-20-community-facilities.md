@@ -83,6 +83,7 @@ layout: map-post
 <script type="module">
     import { initMap, loadGeoJSON, fitBounds, applyStyle } from '{{ '/assets/js/gmap.js' | relative_url }}';
     
+    /*
     (async () => {
         try {    
             const map = await initMap('map')
@@ -98,4 +99,5 @@ layout: map-post
             console.error('Error initializing map:', error);
         }
     })();
+    */
 </script>
