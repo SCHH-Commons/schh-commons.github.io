@@ -7,7 +7,6 @@ const getMap = async (id) => {
 }
 
 const addMarkers = (map) => {
-    console.log('addMarkers');
     for (const property of properties) {
         const advancedMarkerElement = new google.maps.marker.AdvancedMarkerElement({
             map,
