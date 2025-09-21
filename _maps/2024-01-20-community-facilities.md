@@ -77,7 +77,7 @@ layout: map-post
 
 </style>
 
-<gmp-map center="32.3044810,-80.9572716" zoom="12.5" id="map"></gmp-map>
+<gmp-map center="32.3044810,-80.9572716" zoom="12.5" id="map" map-id="amenities-map"></gmp-map>
 
 <script type="module">
     import { getMap, loadGeoJSON, fitBounds, applyStyle } from '{{ '/assets/js/gmap.js' | relative_url }}';
