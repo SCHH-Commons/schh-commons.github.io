@@ -1,5 +1,30 @@
-(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
-    ({ key: "AIzaSyAx7YrWFehCJR6T_ko2EhO_kpwfUzviVIs", v: "weekly" });
+// (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
+//    ({ key: "AIzaSyAx7YrWFehCJR6T_ko2EhO_kpwfUzviVIs", v: "weekly" });
+
+import 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAx7YrWFehCJR6T_ko2EhO_kpwfUzviVIs&callback=console.debug&libraries=maps,marker&v=beta'
+
+const getMap = async (id) => {
+    console.log('getMap', id);
+    const mapElement = document.getElementById(id || 'map');
+    console.log('mapElement', mapElement);
+    await customElements.whenDefined('gmp-map');
+    console.log('mapElement.innerMap', mapElement.innerMap);
+    return mapElement.innerMap;
+}
+
+const addMarkers = (map) => {
+    for (const property of properties) {
+        const advancedMarkerElement = new google.maps.marker.AdvancedMarkerElement({
+            map,
+            content: buildContent(property),
+            position: property.position,
+            title: property.description,
+        });
+        advancedMarkerElement.addListener("click", () => {
+            toggleHighlight(advancedMarkerElement, property);
+        });
+    }
+}
 
 async function initMap(id, center, zoom) {
     console.log('initMap', id, center, zoom);
@@ -187,4 +212,4 @@ const properties = [{
     },
 }];
 
-export { initMap };
+export { initMap, getMap, addMarkers };
