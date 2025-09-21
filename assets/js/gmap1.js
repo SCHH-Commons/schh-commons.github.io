@@ -4,11 +4,8 @@
 import 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAx7YrWFehCJR6T_ko2EhO_kpwfUzviVIs&callback=console.debug&libraries=maps,marker&v=beta'
 
 const getMap = async (id) => {
-    console.log('getMap', id);
     const mapElement = document.getElementById(id || 'map');
-    console.log('mapElement', mapElement);
     await customElements.whenDefined('gmp-map');
-    console.log('mapElement.innerMap', mapElement.innerMap);
     return mapElement.innerMap;
 }
 
@@ -27,7 +24,6 @@ const addMarkers = (map) => {
 }
 
 async function initMap(id, center, zoom) {
-    console.log('initMap', id, center, zoom);
     // Request needed libraries.
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
