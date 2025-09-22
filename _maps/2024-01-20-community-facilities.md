@@ -3,6 +3,7 @@ title: "Community Facilities Map"
 description: "Interactive map showing all community facilities and amenities."
 date: 2024-01-20
 layout: map-post
+pin: true
 ---
 
 <style>
@@ -86,7 +87,7 @@ layout: map-post
         try {    
             const map = await getMap('map');
             await loadGeoJSON(map, 'https://www.schh-commons.org/knowledge-base/geojson/Sun_City,_Hilton_Head.geojson');
-            await loadGeoJSON(map, 'https://www.schh-commons.org/knowledge-base/geojson/Amenity_Locations.geojson');
+            // await loadGeoJSON(map, 'https://www.schh-commons.org/knowledge-base/geojson/Amenity_Locations.geojson');
             applyStyle(map, {
                 fillColor: '#FF0000',
                 fillOpacity: 0.3,

@@ -6,18 +6,22 @@ const getMap = async (id) => {
     return mapElement.innerMap;
 }
 
-const addMarkers = (map) => {
-    for (const property of properties) {
+const addMarkers = async (map, geoJsonUrl) => {
+    const response = await fetch(geoJsonUrl);
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    const geoJsonData = await response.json();
+    geoJsonData.features.forEach(feature => {
+        let position = { lat: feature.geometry.coordinates[1], lng: feature.geometry.coordinates[0] };
         const advancedMarkerElement = new google.maps.marker.AdvancedMarkerElement({
             map,
-            content: buildContent(property),
-            position: property.position,
-            title: property.description,
+            content: buildContent(feature.properties),
+            position,
+            title: feature.properties.name,
         });
         advancedMarkerElement.addListener("click", () => {
-            toggleHighlight(advancedMarkerElement, property);
+            toggleHighlight(advancedMarkerElement, feature.properties);
         });
-    }
+    })
 }
 
 const loadGeoJSON = async (map, geoJsonUrl) => {
@@ -61,36 +65,20 @@ function toggleHighlight(markerView, property) {
         markerView.zIndex = 1;
     }
 }
-function buildContent(property) {
+function buildContent(feature) {
+    console.log(feature)
     const content = document.createElement("div");
     content.classList.add("property");
+    content.style.setProperty('--accent', feature['marker-color'] || 'red');
     content.innerHTML = `
     <div class="icon">
-        <i aria-hidden="true" class="fa fa-icon fa-${property.type}" title="${property.type}"></i>
-        <span class="fa-sr-only">${property.type}</span>
+        <i aria-hidden="true" class="fa fa-icon fa-${feature['marker-symbol'] || 'house'}" title="${feature.title || feature.name}"></i>
+        <span class="fa-sr-only">${feature['marker-symbol'] || 'house'}</span>
     </div>
     <div class="details">
-        <div class="price">${property.price}</div>
-        <div class="address">${property.address}</div>
-        <div class="features">
-        <div>
-            <i aria-hidden="true" class="fa fa-bed fa-lg bed" title="bedroom"></i>
-            <span class="fa-sr-only">bedroom</span>
-            <span>${property.bed}</span>
-        </div>
-        <div>
-            <i aria-hidden="true" class="fa fa-bath fa-lg bath" title="bathroom"></i>
-            <span class="fa-sr-only">bathroom</span>
-            <span>${property.bath}</span>
-        </div>
-        <div>
-            <i aria-hidden="true" class="fa fa-ruler fa-lg size" title="size"></i>
-            <span class="fa-sr-only">size</span>
-            <span>${property.size} ft<sup>2</sup></span>
-        </div>
-        </div>
-    </div>
-    `;
+        <div class="title">${feature.title || feature.name}</div>
+        <div class="address">${feature.address}</div>
+        <div class="description">${feature.description || ''}</div>`;
     return content;
 }
 
