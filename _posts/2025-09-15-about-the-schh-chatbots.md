@@ -44,7 +44,7 @@ By providing these three entry points, SCHH Commons makes it easy for everyoneâ€
           <div class="card-body text-center">
             <div class="mb-3">
               <!-- <i class="fas fa-robot fa-3x text-primary"></i> -->
-              <img src="{{ '/assets/img/chatbase.jpg' | relative_url }}" style="height:4em; width: auto;" class="no-lightbox"/>
+              <img src="{{ '/assets/img/chatbase.jpg' | relative_url }}" style="height:4em; width: auto;" class="no-lightbox" alt="ChatBase logo"/>
             </div>
             <h3 class="card-title h5 mb-3">Chatbase</h3>
             <p class="card-text text-muted">No login required</p>
@@ -57,7 +57,7 @@ By providing these three entry points, SCHH Commons makes it easy for everyoneâ€
         <a href="https://notebooklm.google.com/notebook/0f446377-e804-4d34-baad-9c1b5676c437" class="text-decoration-none" target="_blank">
           <div class="card-body text-center">
             <div class="mb-3">
-              <img src="{{ '/assets/img/notebooklm.svg' | relative_url }}" style="height:4em; width: auto;" class="no-lightbox"/>
+              <img src="{{ '/assets/img/notebooklm.svg' | relative_url }}" style="height:4em; width: auto;" class="no-lightbox" alt="Notebook LM logo"/>
             </div>
             <h3 class="card-title h5 mb-3">Notebook LM</h3>
             <p class="card-text text-muted">Google login required</p>
@@ -71,7 +71,7 @@ By providing these three entry points, SCHH Commons makes it easy for everyoneâ€
           <div class="card-body text-center">
             <div class="mb-3">
               <!-- <i class="fas fa-robot fa-3x text-primary"></i> -->
-              <img src="{{ '/assets/img/openai.svg' | relative_url }}" style="height:4em; width: auto;" class="no-lightbox"/>
+              <img src="{{ '/assets/img/openai.svg' | relative_url }}" style="height:4em; width: auto;" class="no-lightbox" alt="OpenAI logo"/>
             </div>
             <h3 class="card-title h5 mb-3">Custom GPT</h3>
             <p class="card-text text-muted">ChatGPT login required</p>
