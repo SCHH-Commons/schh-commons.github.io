@@ -30,7 +30,7 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
 ## Test
 {: href="/about"}
 
-![](wc:Sunflower_sky_backdrop.jpg)
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Sunflower_sky_backdrop.jpg/500px-Sunflower_sky_backdrop.jpg)
 
 **fafasfasfasf**
 
