@@ -3,6 +3,7 @@
 icon: fas fa-info-circle
 order: 6
 published: true
+permalink: /about
 ---
 
 **SCHH Commons** is a community-driven initiative created by and for residents of Sun City Hilton Head. The goal is to make it easier for neighbors to discover, share, and use resources that enrich life in our community.
