@@ -134,6 +134,8 @@
 
   {% include metadata-hook.html %}
 
-  <!-- <script id="loader" src="https://www.juncture-digital.io/js/juncture.js" data-ghbase="{{site.github.owner_name}}/{{site.github.repository_name}}/{{site.github.source.branch}}/{{page.path}}"></script> -->
+  {% if page.juncture %}
+     <script src="https://www.juncture-digital.io/js/juncture.js" data-ghbase="{{site.github.owner_name}}/{{site.github.repository_name}}/{{site.github.source.branch}}/{{page.path}}" data-selector=".content"></script>   
+  {% endif %}
 
 </head>
