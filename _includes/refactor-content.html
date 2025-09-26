@@ -183,9 +183,7 @@
       {% else %}
         {%- assign lightbox_on = true -%}
         {%- if site.lightbox == false
-          or site.lightbox == 'false'
-          or site.lightbox == '0'
-          or site.lightbox == 'off' -%}
+          or page.lightbox == false -%}
           {%- assign lightbox_on = false -%}
         {%- endif -%}
         {%- assign classes = _class | default: '' | strip -%}
@@ -208,6 +206,13 @@
 
           {% assign _img_content = _img_content | append: _wrapper_start %}
           {% assign _right = '></a' | append: _right %}
+        {% else %}
+        <style>
+            .post-meta img {
+                aspect-ratio: 40 / 21;
+                object-fit: cover;
+            }
+        </style>
         {% endif %}
 
       {% endif %}
