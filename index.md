@@ -4,7 +4,7 @@ hero:
   title: "Welcome to SCHH Commons"
   subtitle: "Your community resource hub for Sun City Hilton Head"
   cta:
-    text: "Try Our AI Chatbot"
+    text: "Try the AI Chatbot"
     url: "/chatbot"
 resources:
   - title: "AI Chatbot"
