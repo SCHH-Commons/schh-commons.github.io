@@ -61,13 +61,8 @@
   <script>
     (function () {
       var isStandalone = window.matchMedia && window.matchMedia('(display-mode: standalone)').matches;
-      // iOS legacy A2HS
-      if (!isStandalone && typeof navigator.standalone === 'boolean') {
-        isStandalone = navigator.standalone === true;
-      }
-      if (isStandalone) {
-        document.documentElement.classList.add('standalone');
-      }
+      if (!isStandalone && typeof navigator.standalone === 'boolean') isStandalone = navigator.standalone === true;
+      if (isStandalone) document.documentElement.classList.add('standalone');
     })();
   </script>
 
