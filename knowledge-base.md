@@ -39,21 +39,9 @@ The SCHH Commons Knowledge Base is constructed from official community documents
 # Documents
 {: #docs}
 
-<script>
-    console.log('test')
-</script>
-
 <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
 <script>
-    const md2Html = (md) => marked.parse(md);
-    console.log('js');
-
     fetch('https://www.schh-commons.org/knowledge-base/index.md')
     .then(resp => resp.text())
-    .then(md => {
-        const html = md2Html(md);
-        console.log(html);
-        document.getElementById('docs').innerHTML = html;
-    })
-
+    .then(md => document.getElementById('docs').innerHTML = marked.parse(md));
 </script>
