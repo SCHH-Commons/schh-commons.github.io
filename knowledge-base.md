@@ -42,10 +42,14 @@ The SCHH Commons Knowledge Base is constructed from official community documents
 <script type="module">
     import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js"
     const md2Html = (md) => marked.parse(md) // convert markdown to HTML
+    console.log('js')
 
-    let resp = await fetch('https://www.schh-commons.org/knowledge-base/index.md')
-    let md = await resp.text()
-    const html = md2Html(md)
-    console.log(html)
-    document.getElementById('docs').innerHTML = md2Html(md)
+    (async () => {
+        console.log('in async')
+        let resp = await fetch('https://www.schh-commons.org/knowledge-base/index.md')
+        let md = await resp.text()
+        const html = md2Html(md)
+        console.log(html)
+        document.getElementById('docs').innerHTML = md2Html(md)
+    })
 </script>
