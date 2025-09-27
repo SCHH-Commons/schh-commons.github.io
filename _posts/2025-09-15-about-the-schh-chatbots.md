@@ -10,7 +10,7 @@ i# mage: /assets/img/schh-welcome.jpg
 
 # Exploring the SCHH Commons Knowledge Base  
 
-One of the central features of SCHH Commons is the **Knowledge Base**—a growing collection of documents, guides, and resources that help residents and prospective residents better understand life in Sun City Hilton Head. The Knowledge Base brings together information from a variety of sources and makes it available through **AI-powered chatbots**, so you can ask questions and get clear, conversational answers.  
+One of the central features of SCHH Commons is the **[Knowledge Base](/knowledge-base)**—a growing collection of documents, guides, and resources that help residents and prospective residents better understand life in Sun City Hilton Head. The Knowledge Base brings together information from a variety of sources and makes it available through **AI-powered chatbots**, so you can ask questions and get clear, conversational answers.  
 
 To make this resource as useful as possible, SCHH Commons currently offers **three different ways to interact with the Knowledge Base**:  
 
@@ -73,7 +73,7 @@ By providing these three entry points, SCHH Commons makes it easy for everyone�
               <!-- <i class="fas fa-robot fa-3x text-primary"></i> -->
               <img src="{{ '/assets/img/openai.svg' | relative_url }}" style="height:4em; width: auto;" class="no-lightbox" alt="OpenAI logo"/>
             </div>
-            <h3 class="card-title h5 mb-3">Custom GPT</h3>
+            <h3 class="card-title h5 mb-3">ChatGPT</h3>
             <p class="card-text text-muted">ChatGPT login required</p>
           </div>
         </a>
