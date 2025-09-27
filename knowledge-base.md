@@ -43,8 +43,8 @@ The SCHH Commons Knowledge Base is constructed from official community documents
     console.log('test')
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
 <script>
-    import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
     const md2Html = (md) => marked.parse(md);
     console.log('js');
 
