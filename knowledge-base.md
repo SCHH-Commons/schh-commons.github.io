@@ -48,12 +48,9 @@ The SCHH Commons Knowledge Base is constructed from official community documents
     const md2Html = (md) => marked.parse(md);
     console.log('js');
 
-    (async () => {
-        console.log('in async');
-        let resp = await fetch('https://www.schh-commons.org/knowledge-base/index.md');
-        let md = await resp.text();
-        const html = md2Html(md);
-        console.log(html);
-        document.getElementById('docs').innerHTML = md2Html(md);
-    })
+    let resp = await fetch('https://www.schh-commons.org/knowledge-base/index.md');
+    let md = await resp.text();
+    const html = md2Html(md);
+    console.log(html);
+    document.getElementById('docs').innerHTML = md2Html(md);
 </script>
