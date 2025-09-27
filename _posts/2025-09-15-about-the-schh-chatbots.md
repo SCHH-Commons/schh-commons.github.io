@@ -9,7 +9,7 @@ tags: [SCHH Commons, AI tools, Knowledge base, Community resources, Sun City Hil
 
 # Exploring the SCHH Commons Knowledge Base  
 
-One of the central features of SCHH Commons is the **[Knowledge Base](https://www.schh-commons.org/knowledge-base)**—a growing collection of documents, guides, and resources that help residents and prospective residents better understand life in Sun City Hilton Head. The Knowledge Base brings together information from a variety of sources and makes it available through **AI-powered chatbots**, so you can ask questions and get clear, conversational answers.  
+One of the central features of SCHH Commons is the **[Knowledge Base](/kb)**—a growing collection of documents, guides, and resources that help residents and prospective residents better understand life in Sun City Hilton Head. The Knowledge Base brings together information from a variety of sources and makes it available through **AI-powered chatbots**, so you can ask questions and get clear, conversational answers.  
 
 To make this resource as useful as possible, SCHH Commons currently offers **three different ways to interact with the Knowledge Base**:  
 
