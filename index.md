@@ -54,9 +54,11 @@ resources:
     .card:hover i, .card:hover .card-title {
         color: #A0524D !important;
     }
+    /*
     a.anchor {
         display: none;
     }
+    */
 </style>
 
 ## About SCHH Commons
