@@ -157,11 +157,12 @@ pin: true
 <gmp-map center="32.3044810,-80.9572716" zoom="13" id="map" map-id="amenities-map"></gmp-map>
 
 <script type="module">
-    import { getMap, addMarkers } from '{{ '/assets/js/gmap.js' | relative_url }}';
+    import { getMap, loadGeoJSON, addMarkers } from '{{ '/assets/js/gmap.js' | relative_url }}';
 
     (async () => {
         try {
             const map = await getMap('map');
+            await loadGeoJSON(map, 'https://www.schh-commons.org/knowledge-base/geojson/Sun_City,_Hilton_Head.geojson', {strokeWeight: 1, zIndex: 2, fillOpacity: 0});
             addMarkers(map, 'https://www.schh-commons.org/knowledge-base/geojson/Amenity_Locations.geojson');
         } catch (error) {
             console.error('Error initializing map:', error);

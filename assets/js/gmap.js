@@ -66,7 +66,6 @@ function toggleHighlight(markerView, property) {
     }
 }
 function buildContent(feature) {
-    console.log(feature)
     const content = document.createElement("div");
     content.classList.add("property");
     content.style.setProperty('--accent', feature['marker-color'] || 'red');

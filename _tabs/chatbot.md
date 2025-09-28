@@ -24,7 +24,6 @@ published: true
     body {
         height: 100vh;
         padding: env(safe-area-inset-top) env(safe-area-inset-right) 0 env(safe-area-inset-left);
-        border: 1px solid green;
     }
     #main-wrapper,
     #main-wrapper .container,
@@ -38,15 +37,16 @@ published: true
     iframe {
         margin-left: -1em;
         width: calc(100% + 2em);
-        height: 100%;
+        height: 99%;
     }
-
+    #tail-wrapper {
+        display: none;
+    }
     #tail-wrapper footer {
         margin-top: 0;
         padding: 0;
         height: 4rem;
     }
-
     /* non-PWA mobile styles */
     @media (display-mode: browser) and (max-width: 767px) {
         body {

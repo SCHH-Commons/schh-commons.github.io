@@ -54,23 +54,21 @@ resources:
     .card:hover i, .card:hover .card-title {
         color: #A0524D !important;
     }
-
+    a.anchor {
+        display: none;
+    }
 </style>
 
 ## About SCHH Commons
 
-SCHH Commons is a community-sponsored resource hub designed specifically for Sun City Hilton Head residents and prospective residents. Our mission is to make life in SCHH easier to navigate by providing clear answers, helpful resources, and community connections all powered by modern technology.
-
-Whether you're a current resident looking for community information, or considering a move to our beautiful active adult community, you'll find curated knowledge, interactive tools, and local insights to help you make the most of the SCHH experience.
+SCHH Commons is a community-sponsored resource hub designed for Sun City Hilton Head residents and prospective residents. The goal is to make it easier to find and use information.  The SCHH Commons site aggregates information from a wide range of sources, documents contained in the Association Community Library, the Sun City Website, the SunSations magazine, and various news and event e-mails distributed by the association and clubs.  This information is accessed using a helpful AI Assistant,
 
 ## What You'll Find Here
-
-Our platform brings together essential community resources in one convenient location:
 
 - **AI-Powered Assistance** - Our centerpiece chatbot provides instant answers to your SCHH-specific questions
 - **Event Information** - Stay connected with community activities and important dates
 - **Community Knowledge** - Curated articles covering everything from local services to community events
 - **Interactive Maps** - Visual guides to help you navigate amenities, services, and points of interest
-- **Local Voices** - Podcasts featuring community members, local experts, and helpful discussions
+- **Audio Overviews** - Podcasts featuring helpful discussions on topics of interest
 
-All resources are carefully maintained by community volunteers and designed with the needs of SCHH residents in mind.
+Visit the [About](/about) page to learn more about the initiative and how you can get involved and support it.
