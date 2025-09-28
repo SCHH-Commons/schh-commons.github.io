@@ -2,7 +2,7 @@
 title: Introducing SCHH Commons
 description: SCHH Commons is a resident-initiated project to make community information easier to find and use. By aggregating websites, documents, and resident knowledge into a growing AI-powered knowledge base, it aims to connect valuable resources in new ways.
 author: ron
-date: 2024-09-15
+date: 2025-09-01
 categories: [Announcements, Community]
 tags: [SCHH Commons, AI tools, Knowledge base, Community resources, Sun City Hilton Head]
 image: /assets/img/schh-welcome.jpg

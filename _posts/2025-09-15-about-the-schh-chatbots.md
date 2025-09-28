@@ -5,6 +5,8 @@ author: ron
 date: 2024-09-15
 categories: [Announcements, AI]
 tags: [SCHH Commons, AI tools, Knowledge base, Community resources, Sun City Hilton Head]
+pin: true
+image: /assets/img/ai-assistant.jpg
 ---
 
 # Exploring the SCHH Commons Knowledge Base  
