@@ -43,5 +43,12 @@ The SCHH Commons Knowledge Base is constructed from official community documents
 <script>
     fetch('https://www.schh-commons.org/knowledge-base/index.md')
     .then(resp => resp.text())
-    .then(md => document.getElementById('docs').innerHTML = marked.parse(md));
+    .then(md => {
+        let docsEl = document.getElementById('docs');
+        docsEl.innerHTML = marked.parse(md);
+        return docsEl;
+    })
+    .then(docsEl => {
+        docsEl.querySelectorAll('a').forEach(a => { a.setAttribute('target', '_blank'); });
+    });
 </script>

@@ -3,9 +3,9 @@ layout: landing
 hero:
   title: "Welcome to SCHH Commons"
   subtitle: "Your community resource hub for Sun City Hilton Head"
-  cta:
-    text: "Try the AI Chatbot"
-    url: "/chatbot"
+  #cta:
+  #  text: "Try the AI Chatbot"
+  #  url: "/chatbot"
 resources:
   - title: "AI Chatbot"
     url: "/chatbot"
@@ -59,16 +59,6 @@ resources:
     }
 </style>
 
-## About SCHH Commons
+**SCHH Commons** is a resident-created resource that helps Sun City Hilton Head residents find and understand information more easily. It brings together official documents, local insights, and an AI-powered assistant that answers questions in plain language. In addition to the Knowledge Base and AI Assistant, the Commons also features other useful community resources—including an events calendar, interactive maps, podcasts, and in-depth “Deep Dive” articles exploring topics of special interest to residents.
 
-SCHH Commons is a community-sponsored resource hub designed for Sun City Hilton Head residents and prospective residents. The goal is to make it easier to find and use information.  The SCHH Commons site aggregates information from a wide range of sources, documents contained in the Association Community Library, the Sun City Website, the SunSations magazine, and various news and event e-mails distributed by the association and clubs.  This information is accessed using a helpful AI Assistant,
-
-## What You'll Find Here
-
-- **AI-Powered Assistance** - Our centerpiece chatbot provides instant answers to your SCHH-specific questions
-- **Event Information** - Stay connected with community activities and important dates
-- **Community Knowledge** - Curated articles covering everything from local services to community events
-- **Interactive Maps** - Visual guides to help you navigate amenities, services, and points of interest
-- **Audio Overviews** - Podcasts featuring helpful discussions on topics of interest
-
-Visit the [About](/about) page to learn more about the initiative and how you can get involved and support it.
+To learn more about the project and its goals, visit the [About](/about) page.

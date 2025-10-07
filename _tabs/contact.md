@@ -5,6 +5,7 @@ icon: fas fa-envelope
 layout: page
 order: 7
 published: true
+permalink: /contact
 ---
 
 <style>

@@ -34,6 +34,9 @@ published: true
         margin-top: 0;
         height: 100%;
     }
+    .dynamic-title {
+      display: none;
+    }
     iframe {
         margin-left: -1em;
         width: calc(100% + 2em);

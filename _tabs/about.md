@@ -4,54 +4,76 @@ icon: fas fa-info-circle
 order: 6
 published: true
 permalink: /about
+toc: false
 ---
 
-**SCHH Commons** is a community-driven initiative created by and for residents of Sun City Hilton Head. The goal is to make it easier for neighbors to discover, share, and use resources that enrich life in our community.
+## Making Sun City Information Easier to Find and Use
 
-> This site is not affiliated with Pulte, the developer of Sun City Hilton Head, nor with the HOA or any official organization. Instead, SCHH Commons is a grassroots effort—built by residents, for residents.
-{: .prompt-info}
+When I first arrived in Sun City, I was surprised by how hard it could be to find certain kinds of information. Important details are scattered across many places—the Sun City website (both public and resident-only pages), the *SunSations* magazine, the Clubs and Groups Catalog, numerous PDFs in the Association Community Library, SCTV broadcasts, and the many emails that arrive throughout the month. Much of this information isn’t searchable or presented in a way that’s easy to explore.
 
----
+There’s also a lot of valuable, practical knowledge that isn’t found in those official sources—things like trusted local recommendations, resident-suggested vendors, updates on municipal decisions, and plans for nearby development or road projects that affect Sun City. The idea behind SCHH Commons is simple: bring all of these pieces together in one friendly, easy-to-use place so residents can quickly find what they need.
 
-## What We Do
+The **SCHH Commons Knowledge Base** isn’t meant to replace official Sun City websites, association documents, or other authoritative sources. Those remain the final word for community rules, policies, and updates. Instead, the Commons serves as a helpful companion to those sources—an added layer that makes it easier to locate, connect, and understand information that matters to residents.
 
-* **Resource Sharing** – The site is used to collect, organize, and share information that helps residents navigate Sun City Hilton Head, from clubs and activities to local services and community knowledge.
-* **Knowledge Base** – At the heart of SCHH Commons is a growing knowledge base built from both official community documents and resident-contributed information. This knowledge powers tools like our SCHH chatbot.
-* **Technology Tools** – The site leverages technology to make resources more accessible. Current technology-driven features include an AI chatbot, interactive maps, podcasts, and an interactive events calendar.
-* **Community Contributions** – Residents are encouraged to share documents, tips, and insights that others might find useful.
+The **SCHH Commons Knowledge Base** and its **AI Assistant (chatbot)** were created to make that process even simpler. Just type a question—like you would when chatting with a friend—and the assistant provides clear, summarized answers drawn from a growing collection of trusted community sources.
 
----
+There are **three versions of the AI Assistant**, each designed to fit different comfort levels:
 
-## Why It Matters
+- The **[default chatbot](/chatbot)** (powered by ChatGPT), built right into the SCHH Commons website, is quick, simple, and requires no sign-in.
+- A **[Notebook LM version](https://notebooklm.google.com/notebook/0f446377-e804-4d34-baad-9c1b5676c437){: target="_blank"}** (powered by Google) is designed for deeper research and includes **citations** showing which sources were used in its answers.
+- A **[ChatGPT version](https://chatgpt.com/g/g-6760d0e55ff481918057b4697385a94e-sun-city-hilton-head?model=gpt-5){: target="_blank"}** supports **voice conversations** as well as text, making it perfect for those who prefer to talk rather than type.
 
-Sun City Hilton Head is a large and vibrant community, but information is scattered across different platforms and sometimes difficult to access. SCHH Commons makes it easier to:
+These options let residents choose whichever feels most natural. The Notebook LM and ChatGPT versions require login with their respective accounts, while the website chatbot is open to everyone.
 
-* Quickly find reliable information.
-* Discover new opportunities and activities.
-* Contribute your own knowledge and experiences to benefit others.
-* Explore how new technologies—like AI—can make community life easier.
+The Knowledge Base currently includes most documents related to community governance and lifestyle. You can view the full list on the **[Knowledge Base Contents](/kb)** page. Residents are encouraged to report any errors they find and to suggest—or even contribute—new information to keep the collection growing and accurate. Over time, it will expand to include more about the surrounding area, covering local services, attractions, and civic updates that matter to Sun City residents.
 
 ---
 
-## Our Principles
+## Who I Am and Why I Started SCHH Commons
 
-* **Open & Inclusive** – Resources are meant for all SCHH residents and prospective residents.
-* **Transparent** – While we make every effort to ensure accuracy, errors can occur—especially with AI-generated content. Always verify important details with official sources.
-* **Complementary** – Our tools do not replace official Sun City information channels. They are meant as conveniences that make it easier to find, use, and understand that information.
-* **Community-Grown** – SCHH Commons will grow as more residents contribute their time, knowledge, and ideas.
+My name is Ron Snyder, and like many new residents, I spent my first few months here trying to figure out where to find things—who to ask, which website to visit, which document had the latest update. With my background in technology, research, and community projects, I soon discovered there was a chance to make this process easier for everyone.
 
----
+I’m a veteran, having served ten years in the U.S. Air Force, followed by twenty years in the defense industry. After that, I spent nearly two decades in research and development in the non-profit academic world, leading AI and information projects that helped scholars and institutions share knowledge more effectively.
 
-## Get Involved
+When I moved to Sun City Hilton Head, I noticed right away how these same ideas could benefit our community—using technology to help residents connect with one another and with the information that matters most to daily life here. That’s how SCHH Commons began: a simple, resident-driven effort to make community knowledge easier to find, share, and use.
 
-* **Try the Tools** – Explore one of the provided AI Chatbots [SCHH chatbots](/posts/about-the-schh-chatbots/) or [browse our resource library](/#resources).
-* **Share Your Knowledge** – Have a helpful tip, document, or resource? Consider contributing.
-* **Join the Conversation** – Ideas and feedback is welcome from anyone interested in shaping the future of SCHH Commons.
+Today, the **Knowledge Base** and **AI Assistant** are at the heart of SCHH Commons, but they’re just the beginning. Other features are in development—like a consolidated events calendar, interactive maps, podcasts, and “Deep Dive” articles exploring topics of special interest to residents.
+
+My hope is that SCHH Commons continues to grow as a shared community resource—built by residents, for residents.
 
 ---
 
-## A Note on AI
+## What is a “Commons”?
 
-SCHH Commons makes use of the latest AI technology. The chatbots can answer questions about community life, provide summaries, and help residents learn about upcoming events. The Chatbots are powered by  a local knowledge base making it a flexible tool for everyday questions.
+A **commons** is something shared and cared for by a community. In the past, it referred to open land—fields or pastures everyone could use. Today, the idea extends to shared knowledge, digital tools, and spaces where people collaborate for the common good.
 
-While the chatbot is focused on Sun City Hilton Head, it’s built on tools that reflect a much larger shift in how people will access and use information in the years ahead.
+**SCHH Commons** carries that spirit forward by gathering useful information, technology, and resources in one place—organized and shared for everyone’s benefit. It’s about making knowledge easier to reach and encouraging residents to help one another through shared experience and insight.
+
+---
+
+## Try It Out and Get Involved
+
+Give it a try and see what you think! The AI Assistant is designed to be easy and safe to use—even if you’ve never used anything like it before. If you’ve tried ChatGPT, Gemini, or Copilot, the experience will feel familiar and friendly. Just type your question, and the chatbot will do its best to help.
+
+You can start using the SCHH Commons AI Assistant today—it’s approachable, conversational, and always available to answer questions about Sun City Hilton Head. If you find it helpful, please consider **sharing feedback**, **suggesting improvements**, or **[supporting the site](/support)** so it can continue to grow.
+
+Feedback and suggestions can be sent through the [Contact form](/contact) on the Commons website. And if you like what you see, please tell your neighbors and club members—the more people who use it, the better it becomes for everyone.
+
+While the chatbots are designed to be intuitive, sometimes a quick demo helps. I’m happy to provide group presentations for clubs or neighborhood groups who want to learn more. To request one, just use the [Contact form](/contact) on the Commons website.
+
+Here are a few sample prompts to try:
+
+- “Brief me on recent community news and upcoming events.”
+- “What’s happening this week in Sun City Hilton Head?”
+- “Summarize the latest SunSations issue.”
+- “What’s the process for submitting a modification request?”
+
+---
+
+### Support the Commons
+
+SCHH Commons will always be free to use, but it does take resources to keep it running—hosting, AI services, and maintenance. If you find the site useful, please consider a [small donation](/support) to help cover these costs and keep the project growing. Your encouragement and support mean a lot and help keep this community effort moving forward.
+
+---
+
+*SCHH Commons is a resident-initiated, community-driven project and is not affiliated with the developer or any official Sun City Hilton Head organization. The tools and resources are provided to help residents more easily find, understand, and use community information.*

@@ -3,6 +3,7 @@
 icon: fas fa-info-circle
 order: 8
 published: true
+permalink: /support
 ---
 
 <style>
