@@ -63,6 +63,8 @@ permalink: /contact
     }
 </style>
 
+Contact me at [admin@schh-commons.org](mailto:admin@schh-commons.org) or use the form below.
+
 <form class="contact-form" action="https://formsubmit.co/admin@schh-commons.org" method="POST">
   <label for="name">Name</label>
   <input id="name" type="text" name="name" required>

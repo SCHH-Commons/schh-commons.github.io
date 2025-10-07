@@ -6,22 +6,24 @@ const getMap = async (id) => {
     return mapElement.innerMap;
 }
 
-const addMarkers = async (map, geoJsonUrl) => {
+const addMarkers = async (map, geoJsonUrl, filters) => {
     const response = await fetch(geoJsonUrl);
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     const geoJsonData = await response.json();
-    geoJsonData.features.forEach(feature => {
-        let position = { lat: feature.geometry.coordinates[1], lng: feature.geometry.coordinates[0] };
-        const advancedMarkerElement = new google.maps.marker.AdvancedMarkerElement({
-            map,
-            content: buildContent(feature.properties),
-            position,
-            title: feature.properties.name,
-        });
-        advancedMarkerElement.addListener("click", () => {
-            toggleHighlight(advancedMarkerElement, feature.properties);
-        });
-    })
+    Array.from(geoJsonData.features)
+        .filter(feature => !filters || Object.entries(filters).every(([key, value]) => feature.properties[key] === value))
+        .forEach(feature => {
+            let position = { lat: feature.geometry.coordinates[1], lng: feature.geometry.coordinates[0] };
+            const advancedMarkerElement = new google.maps.marker.AdvancedMarkerElement({
+                map,
+                content: buildContent(feature.properties),
+                position,
+                title: feature.properties.name,
+            });
+            advancedMarkerElement.addListener("click", () => {
+                toggleHighlight(advancedMarkerElement, feature.properties);
+            });
+        })
 }
 
 const loadGeoJSON = async (map, geoJsonUrl, style) => {
