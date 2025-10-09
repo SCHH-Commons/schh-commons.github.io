@@ -17,13 +17,10 @@ The **SCHH Commons Knowledge Base** isn’t meant to replace official Sun City w
 
 The **SCHH Commons Knowledge Base** and its **AI Assistant (chatbot)** were created to make that process even simpler. Just type a question—like you would when chatting with a friend—and the assistant provides clear, summarized answers drawn from a growing collection of trusted community sources.
 
-There are **three versions of the AI Assistant**, each designed to fit different comfort levels:
+The **[AI Assistant](/chatbot)** is powered by Notebook LM, an innovative AI tool developed by Google that transforms collections of documents into interactive, searchable notebooks. Notebook LM provides detailed, well-sourced responses and includes citations showing which documents were used in its answers.
 
-- The **[default chatbot](/chatbot)** (powered by ChatGPT), built right into the SCHH Commons website, is quick, simple, and requires no sign-in.
-- A **[Notebook LM version](https://notebooklm.google.com/notebook/0f446377-e804-4d34-baad-9c1b5676c437){: target="_blank"}** (powered by Google) is designed for deeper research and includes **citations** showing which sources were used in its answers.
-- A **[ChatGPT version](https://chatgpt.com/g/g-6760d0e55ff481918057b4697385a94e-sun-city-hilton-head?model=gpt-5){: target="_blank"}** supports **voice conversations** as well as text, making it perfect for those who prefer to talk rather than type.
+To use the Assistant, simply open the Notebook LM link above. You’ll need to sign in with a Google account, and once inside, you can start exploring by asking questions in plain language.
 
-These options let residents choose whichever feels most natural. The Notebook LM and ChatGPT versions require login with their respective accounts, while the website chatbot is open to everyone.
 
 The Knowledge Base currently includes most documents related to community governance and lifestyle. You can view the full list on the **[Knowledge Base Contents](/kb)** page. Residents are encouraged to report any errors they find and to suggest—or even contribute—new information to keep the collection growing and accurate. Over time, it will expand to include more about the surrounding area, covering local services, attractions, and civic updates that matter to Sun City residents.
 

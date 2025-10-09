@@ -1,6 +1,7 @@
 ---
 # the default layout is 'page'
-title: AI Assistants
+title: AI Assistant
+description: Learn about the SCHH AI Assistant — a resident-created tool that helps you find and understand Sun City Hilton Head information more easily.
 icon: fas fa-atom
 layout: page
 order: 1
@@ -8,51 +9,140 @@ permalink: /chatbot
 published: true
 ---
 
-<section class="resources-section">
-    
-  <div class="row">
-    <div class="col-md-4 mb-4">
-      <article class="card h-100">
-        <a href="/chatbase" class="text-decoration-none">
-          <div class="card-body text-center">
-            <div class="mb-3">
-              <!-- <i class="fas fa-robot fa-3x text-primary"></i> -->
-              <img src="{{ '/assets/img/chatbase.jpg' | relative_url }}" style="height:4em; width: auto;" class="no-lightbox" alt="ChatBase logo"/>
-            </div>
-            <h3 class="card-title h5 mb-3">Chatbase</h3>
-            <p class="card-text text-muted">No login required</p>
-          </div>
-        </a>
-      </article>
-    </div>
-    <div class="col-md-4 mb-4">
-      <article class="card h-100">
-        <a href="https://notebooklm.google.com/notebook/0f446377-e804-4d34-baad-9c1b5676c437" class="text-decoration-none" target="_blank">
-          <div class="card-body text-center">
-            <div class="mb-3">
-              <img src="{{ '/assets/img/notebooklm.svg' | relative_url }}" style="height:4em; width: auto;" class="no-lightbox" alt="Notebook LM logo"/>
-            </div>
-            <h3 class="card-title h5 mb-3">Notebook LM</h3>
-            <p class="card-text text-muted">Google login required</p>
-          </div>
-        </a>
-      </article>
-    </div>
-    <div class="col-md-4 mb-4">
-      <article class="card h-100">
-        <a href="https://chatgpt.com/g/g-6760d0e55ff481918057b4697385a94e-sun-city-hilton-head?model=gpt-5" class="text-decoration-none" target="_blank">
-          <div class="card-body text-center">
-            <div class="mb-3">
-              <!-- <i class="fas fa-robot fa-3x text-primary"></i> -->
-              <img src="{{ '/assets/img/openai.svg' | relative_url }}" style="height:4em; width: auto;" class="no-lightbox" alt="OpenAI logo"/>
-            </div>
-            <h3 class="card-title h5 mb-3">ChatGPT</h3>
-            <p class="card-text text-muted">ChatGPT login required</p>
-          </div>
-        </a>
-      </article>
-    </div>
+<style>
+  .row {
+    justify-content: center;
+  }
+  main h4 {
+    margin: 0;
+    font-size: clamp(0.5em, 2vw, 1em);
+    font-weight: 400;
+  }
+  table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1em 0;
+      font-size: 0.95rem;
+      font-family: sans-serif;
+  }
 
-  </div>
+  th, td {
+      padding: 0.6em 0.8em;
+      text-align: left;
+      border: 1px solid #ddd;
+  }
 
-</section>
+  th {
+      background-color: #f4f4f4;
+      font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+      background-color: #fafafa;
+  }
+
+  tr:hover {
+      background-color: #f1f7ff;
+    }
+
+  th:nth-child(3),
+  td:nth-child(3) {
+    display: none;
+  }
+  td {
+    line-height: 1.4;
+  }
+
+    .button {
+      position: relative;
+      border-radius: 1000px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      min-width: 6rem;
+      text-decoration: none;
+      transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+      border: 0.125rem solid rgb(255, 209, 64);
+      font-family: PayPalOpen-Bold, "Helvetica Neue", Arial, sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      font-weight: 400;
+      padding: 0.625rem 1.875rem;
+      background: rgb(255, 209, 64);
+      color: rgb(0, 48, 135);
+    }
+    .content a.button:hover {
+      color: unset !important;
+      border-bottom: #ddd;
+    }
+
+</style>
+
+Welcome to the **SCHH AI Assistant** — a friendly, experimental tool created to help Sun City Hilton Head residents (and future neighbors) quickly find the information that matters most. Instead of digging through websites, newsletters, or emails, you can simply **ask questions in plain language** and get helpful answers drawn from reliable community sources. It’s like having a knowledgeable neighbor who’s always ready to help you learn more about life in Sun City.
+
+> **Note:** *The SCHH AI Assistant is a resident-initiated, community-driven project and is not affiliated with the developer or any official Sun City Hilton Head organization. The tools and resources hosted on the [SCHH Commons](https://www.schh-commons.org) website are provided to help residents more easily find, understand, and use community information.*
+{: .prompt-info }
+
+---
+
+## SCHH AI Assistant  
+**Powered by Notebook LM**
+
+The **SCHH AI Assistant** is a friendly, easy-to-use chatbot designed to help residents quickly find and understand information about life in **Sun City Hilton Head**. Instead of searching through multiple websites, emails, and documents, you can simply **ask questions in plain language**—just as you would in a conversation—and receive clear, concise answers drawn from trusted community sources.
+
+The Assistant is **powered by Notebook LM**, an innovative AI tool created by **Google** that transforms collections of documents into interactive, conversational notebooks. Notebook LM enables the Assistant to read and understand the materials that make up the Sun City knowledge base, connect related information, and respond with answers grounded in those documents.  In short, **Notebook LM is the technology “engine” that makes the SCHH AI Assistant possible**, allowing you to explore community information naturally and conversationally.
+
+<p style="text-align: center;">
+<a href="https://notebooklm.google.com/notebook/0f446377-e804-4d34-baad-9c1b5676c437" class="button" target="_blank">
+  <img src="{{ '/assets/img/notebooklm.svg' | relative_url }}" class="no-lightbox" alt="Start AI Chatbot" style="height: 24px; width: 24px; margin-right: 8px;">Open the SCHH AI Assistant
+</a>
+</p>
+
+---
+
+## The Knowledge Base
+
+The **Knowledge Base** is the foundation of the SCHH AI Assistant. It brings together a growing collection of documents, guides, and resources that help residents better understand life in Sun City Hilton Head.
+
+Sources include:  
+- The official **Sun City Hilton Head website** (public and resident-only pages)  
+- **SunSations** magazine  
+- The **Clubs and Groups Catalog**  
+- Documents from the **Association Community Library**  
+- **SCTV** broadcasts  
+- **Community email announcements** and other communications  
+- **AI-assisted Deep Dives** — in-depth explorations that combine AI research tools with curated source material to provide a deeper understanding of key community topics  
+- **Resident-contributed content** and insights  
+
+The tables below list the documents currently included in the Knowledge Base, each with a link to its source.  
+Please note that viewing resident-only pages or Library materials may require logging into the official Sun City website.
+
+> **Note:** *The SCHH Knowledge Base isn’t meant to replace official Sun City websites, association documents, or other authoritative sources. Those remain the final word for community rules, policies, and updates. Instead, the Knowledge Base and AI Assistant serves as a helpful companion to those sources—an added layer that makes it easier to locate, connect, and understand information that matters to residents.*
+{: .prompt-info }
+
+---
+
+> **Feedback and Contributions:**  
+> The SCHH AI Assistant is currently in a pilot phase and continues to evolve as new materials are added. Contact me to identify any errors discovered, to suggest new content to be added, or to contribute a document.
+
+<p style="text-align: center;">
+<a href="/contact" class="button">
+  <i class="far fa-envelope fa-fw me-1"></i>Contact me
+</a>
+</p>
+
+<section id="docs"></docs>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+<script>
+    fetch('https://www.schh-commons.org/knowledge-base/index.md')
+    .then(resp => resp.text())
+    .then(md => {
+        let docsEl = document.getElementById('docs');
+        docsEl.innerHTML = marked.parse(md);
+        return docsEl;
+    })
+    .then(docsEl => {
+        docsEl.querySelectorAll('a').forEach(a => { a.setAttribute('target', '_blank'); });
+    });
+</script>

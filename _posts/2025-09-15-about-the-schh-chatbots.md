@@ -7,6 +7,7 @@ categories: [Announcements, AI]
 tags: [SCHH Commons, AI tools, Knowledge base, Community resources, Sun City Hilton Head]
 pin: true
 image: /assets/img/ai-assistant.jpg
+published: false
 ---
 
 # Exploring the SCHH Commons Knowledge Base  
