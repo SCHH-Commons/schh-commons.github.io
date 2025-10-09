@@ -1,6 +1,6 @@
 ---
 # the default layout is 'page'
-title: AI Assistant
+title: AI Assistants
 icon: fas fa-atom
 layout: page
 order: 1
@@ -8,60 +8,51 @@ permalink: /chatbot
 published: true
 ---
 
-<style>
+<section class="resources-section">
+    
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <article class="card h-100">
+        <a href="/chatbase" class="text-decoration-none">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <!-- <i class="fas fa-robot fa-3x text-primary"></i> -->
+              <img src="{{ '/assets/img/chatbase.jpg' | relative_url }}" style="height:4em; width: auto;" class="no-lightbox" alt="ChatBase logo"/>
+            </div>
+            <h3 class="card-title h5 mb-3">Chatbase</h3>
+            <p class="card-text text-muted">No login required</p>
+          </div>
+        </a>
+      </article>
+    </div>
+    <div class="col-md-4 mb-4">
+      <article class="card h-100">
+        <a href="https://notebooklm.google.com/notebook/0f446377-e804-4d34-baad-9c1b5676c437" class="text-decoration-none" target="_blank">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <img src="{{ '/assets/img/notebooklm.svg' | relative_url }}" style="height:4em; width: auto;" class="no-lightbox" alt="Notebook LM logo"/>
+            </div>
+            <h3 class="card-title h5 mb-3">Notebook LM</h3>
+            <p class="card-text text-muted">Google login required</p>
+          </div>
+        </a>
+      </article>
+    </div>
+    <div class="col-md-4 mb-4">
+      <article class="card h-100">
+        <a href="https://chatgpt.com/g/g-6760d0e55ff481918057b4697385a94e-sun-city-hilton-head?model=gpt-5" class="text-decoration-none" target="_blank">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <!-- <i class="fas fa-robot fa-3x text-primary"></i> -->
+              <img src="{{ '/assets/img/openai.svg' | relative_url }}" style="height:4em; width: auto;" class="no-lightbox" alt="OpenAI logo"/>
+            </div>
+            <h3 class="card-title h5 mb-3">ChatGPT</h3>
+            <p class="card-text text-muted">ChatGPT login required</p>
+          </div>
+        </a>
+      </article>
+    </div>
 
-    * {
-        box-sizing: border-box;
-    }
+  </div>
 
-    :root {
-        --safe-top: env(safe-area-inset-top);
-        --safe-right: env(safe-area-inset-right);
-        --safe-bottom: env(safe-area-inset-bottom);
-        --safe-left: env(safe-area-inset-left);
-    }
-
-    body {
-        height: 100vh;
-        padding: env(safe-area-inset-top) env(safe-area-inset-right) 0 env(safe-area-inset-left);
-    }
-    #main-wrapper,
-    #main-wrapper .container,
-    #main-wrapper .container main,
-    #main-wrapper .container main article,
-    #main-wrapper .container main article .content {
-        min-height: 0;
-        margin-top: 0;
-        height: 100%;
-    }
-    .dynamic-title {
-      display: none;
-    }
-    iframe {
-        margin-left: -1em;
-        width: calc(100% + 2em);
-        height: 99%;
-    }
-    #tail-wrapper {
-        display: none;
-    }
-    #tail-wrapper footer {
-        margin-top: 0;
-        padding: 0;
-        height: 4rem;
-    }
-    /* non-PWA mobile styles */
-    @media (display-mode: browser) and (max-width: 767px) {
-        body {
-            height: 100svh;
-        }
-
-        /* iOS-only hint if you need it */
-        @supports (-webkit-touch-callout: none) {
-            /* iOS-specific fixes here if desired */
-        }
-    }
-
-</style>
-
-<iframe src="https://www.chatbase.co/chatbot-iframe/TsC-X_BP0qiFBYG_ZKRZk"></iframe>
+</section>
