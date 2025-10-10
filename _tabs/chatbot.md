@@ -103,19 +103,14 @@ Welcome to the **SCHH AI Assistant** — a friendly, experimental tool created t
 
 ---
 
-## SCHH AI Assistant  
-**Powered by Notebook LM**
-
-The **SCHH AI Assistant** is a friendly, easy-to-use chatbot designed to help residents quickly find and understand information about life in **Sun City Hilton Head**. Instead of searching through multiple websites, emails, and documents, you can simply **ask questions in plain language**—just as you would in a conversation—and receive clear, concise answers drawn from trusted community sources.
-
-The Assistant is **powered by Notebook LM**, an innovative AI tool created by **Google** that transforms collections of documents into interactive, conversational notebooks. Notebook LM enables the Assistant to read and understand the materials that make up the Sun City knowledge base, connect related information, and respond with answers grounded in those documents.  In short, **Notebook LM is the technology “engine” that makes the SCHH AI Assistant possible**, allowing you to explore community information naturally and conversationally.
+The Assistant is **powered by Notebook LM**, an innovative AI tool created by Google that transforms collections of documents into an interactive, conversational knowledge base. Notebook LM enables the Assistant to read and understand the materials that make up the Sun City knowledge base, connect related information, and respond with answers grounded in those documents.  Notebook LM is the technology “engine” that makes the SCHH AI Assistant possible, allowing you to explore community information naturally and conversationally.
 
 > **Note:** *The SCHH AI Assistant is a resident-initiated, community-driven project and is not affiliated with the developer or any official Sun City Hilton Head organization. The tools and resources hosted on the [SCHH Commons](https://www.schh-commons.org) website are provided to help residents more easily find, understand, and use community information.*
 {: .prompt-info }
 
 ---
 
-## The Knowledge Base
+# The Knowledge Base
 {: #knowledge-base}
 
 The **Knowledge Base** is the foundation of the SCHH AI Assistant. It brings together a growing collection of documents, guides, and resources that help residents better understand life in Sun City Hilton Head.
@@ -130,22 +125,24 @@ Sources include:
 - **AI-assisted Deep Dives** — in-depth explorations that combine AI research tools with curated source material to provide a deeper understanding of key community topics  
 - **Resident-contributed content** and insights  
 
-The tables below list the documents currently included in the Knowledge Base, each with a link to its source.  
-Please note that viewing resident-only pages or Library materials may require logging into the official Sun City website.
+The tables below list the documents currently included in the Knowledge Base, each with a link to its source.  (*Viewing resident-only pages or Library materials will require logging into the official Sun City website*)
 
-> **Note:** *The SCHH Knowledge Base isn’t meant to replace official Sun City websites, association documents, or other authoritative sources. Those remain the final word for community rules, policies, and updates. Instead, the Knowledge Base and AI Assistant serves as a helpful companion to those sources—an added layer that makes it easier to locate, connect, and understand information that matters to residents.*
-{: .prompt-info }
+> **Important Note:** *The SCHH Knowledge Base isn’t meant to replace official Sun City websites, association documents, or other authoritative sources. Those remain the final word for community rules, policies, and updates. Instead, the Knowledge Base and AI Assistant serves as a helpful companion to those sources—an added layer that makes it easier to locate, connect, and understand information that matters to residents.*
+{: .prompt-warning }
 
 ---
 
-> **Feedback and Contributions:**  
-> The SCHH AI Assistant is currently in a pilot phase and continues to evolve as new materials are added. Contact me to identify any errors discovered, to suggest new content to be added, or to contribute a document.
+## Feedback and Contributions
+
+The SCHH AI Assistant is currently in a pilot phase and continues to evolve as new materials are added. Contact me to identify any errors discovered, to suggest new content to be added, or to contribute a document.
 
 <p style="text-align: center;">
 <a href="/contact" class="button">
   <i class="far fa-envelope fa-fw me-1"></i>Contact me
 </a>
 </p>
+
+## Knowledge Base Documents
 
 <section id="docs"></docs>
 
