@@ -138,14 +138,13 @@ Please note that viewing resident-only pages or Library materials may require lo
 
 <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
 <script type="module">
-  import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js"
+  import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
   import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace/cdn/components/dialog/dialog.js';
   import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace/cdn/components/button/button.js';
 
-  const isMobile = ('ontouchstart' in document.documentElement && /mobi/i.test(navigator.userAgent) )
+  const isMobile = ('ontouchstart' in document.documentElement && /mobi/i.test(navigator.userAgent) );
 
   let dialog = document.createElement('sl-dialog');
-  dialog.setAttribute('size', 'large');
   dialog.setAttribute('style', `--width: ${isMobile ? '100' : '80'}dvw;`);
   let markdownEl = document.createElement('div');
   dialog.appendChild(markdownEl);
