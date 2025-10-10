@@ -78,9 +78,25 @@ published: true
       border-bottom: #ddd;
     }
 
+    @media (max-width: calc(849px)) {
+    h1.dynamic-title~.content {
+        margin-top: .5em;
+    }
+
+    main h2 {
+    margin: 1.5rem 0 1.25rem;
+    }   
+}
+
 </style>
 
 Welcome to the **SCHH AI Assistant** — a friendly, experimental tool created to help Sun City Hilton Head residents (and future neighbors) quickly find the information that matters most. Instead of digging through websites, newsletters, or emails, you can simply **ask questions in plain language** and get helpful answers drawn from reliable community sources. It’s like having a knowledgeable neighbor who’s always ready to help you learn more about life in Sun City.
+
+<p style="text-align: center;">
+<a href="https://notebooklm.google.com/notebook/0f446377-e804-4d34-baad-9c1b5676c437" class="button" target="_blank">
+  <img src="{{ '/assets/img/notebooklm.svg' | relative_url }}" class="no-lightbox" alt="Start AI Chatbot" style="height: 24px; width: 24px; margin-right: 8px;">Open the SCHH AI Assistant
+</a>
+</p>
 
 > **Note:** *The SCHH AI Assistant is a resident-initiated, community-driven project and is not affiliated with the developer or any official Sun City Hilton Head organization. The tools and resources hosted on the [SCHH Commons](https://www.schh-commons.org) website are provided to help residents more easily find, understand, and use community information.*
 {: .prompt-info }
@@ -93,12 +109,6 @@ Welcome to the **SCHH AI Assistant** — a friendly, experimental tool created t
 The **SCHH AI Assistant** is a friendly, easy-to-use chatbot designed to help residents quickly find and understand information about life in **Sun City Hilton Head**. Instead of searching through multiple websites, emails, and documents, you can simply **ask questions in plain language**—just as you would in a conversation—and receive clear, concise answers drawn from trusted community sources.
 
 The Assistant is **powered by Notebook LM**, an innovative AI tool created by **Google** that transforms collections of documents into interactive, conversational notebooks. Notebook LM enables the Assistant to read and understand the materials that make up the Sun City knowledge base, connect related information, and respond with answers grounded in those documents.  In short, **Notebook LM is the technology “engine” that makes the SCHH AI Assistant possible**, allowing you to explore community information naturally and conversationally.
-
-<p style="text-align: center;">
-<a href="https://notebooklm.google.com/notebook/0f446377-e804-4d34-baad-9c1b5676c437" class="button" target="_blank">
-  <img src="{{ '/assets/img/notebooklm.svg' | relative_url }}" class="no-lightbox" alt="Start AI Chatbot" style="height: 24px; width: 24px; margin-right: 8px;">Open the SCHH AI Assistant
-</a>
-</p>
 
 ---
 
