@@ -22,7 +22,7 @@ The **[AI Assistant](/chatbot)** is powered by Notebook LM, an innovative AI too
 To use the Assistant, simply open the Notebook LM link above. You’ll need to sign in with a Google account, and once inside, you can start exploring by asking questions in plain language.
 
 
-The Knowledge Base currently includes most documents related to community governance and lifestyle. You can view the full list on the **[Knowledge Base Contents](/kb)** page. Residents are encouraged to report any errors they find and to suggest—or even contribute—new information to keep the collection growing and accurate. Over time, it will expand to include more about the surrounding area, covering local services, attractions, and civic updates that matter to Sun City residents.
+The Knowledge Base currently includes most documents related to community governance and lifestyle. You can view the full list on the **[AI Assistant](/chatbot#knowledge-base)** page. Residents are encouraged to report any errors they find and to suggest—or even contribute—new information to keep the collection growing and accurate. Over time, it will expand to include more about the surrounding area, covering local services, attractions, and civic updates that matter to Sun City residents.
 
 ---
 
@@ -32,7 +32,7 @@ My name is Ron Snyder, and like many new residents, I spent my first few months 
 
 I’m a veteran, having served ten years in the U.S. Air Force, followed by twenty years in the defense industry. After that, I spent nearly two decades in research and development in the non-profit academic world, leading AI and information projects that helped scholars and institutions share knowledge more effectively.
 
-When I moved to Sun City Hilton Head, I noticed right away how these same ideas could benefit our community—using technology to help residents connect with one another and with the information that matters most to daily life here. That’s how SCHH Commons began: a simple, resident-driven effort to make community knowledge easier to find, share, and use.
+When I moved to Sun City Hilton Head, I noticed right away how these same skills could benefit our community—using technology to help residents connect with one another and with the information that matters most to daily life here. That’s how SCHH Commons began: a simple, resident-driven effort to make community knowledge easier to find, share, and use.
 
 Today, the **Knowledge Base** and **AI Assistant** are at the heart of SCHH Commons, but they’re just the beginning. Other features are in development—like a consolidated events calendar, interactive maps, podcasts, and “Deep Dive” articles exploring topics of special interest to residents.
 

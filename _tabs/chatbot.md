@@ -98,7 +98,7 @@ Welcome to the **SCHH AI Assistant** — a friendly, experimental tool created t
 </a>
 </p>
 
-> **Note:** *The SCHH AI Assistant is a resident-initiated, community-driven project and is not affiliated with the developer or any official Sun City Hilton Head organization. The tools and resources hosted on the [SCHH Commons](https://www.schh-commons.org) website are provided to help residents more easily find, understand, and use community information.*
+> You will need to login your Google account to use the SCHH AI Assistant
 {: .prompt-info }
 
 ---
@@ -110,9 +110,13 @@ The **SCHH AI Assistant** is a friendly, easy-to-use chatbot designed to help re
 
 The Assistant is **powered by Notebook LM**, an innovative AI tool created by **Google** that transforms collections of documents into interactive, conversational notebooks. Notebook LM enables the Assistant to read and understand the materials that make up the Sun City knowledge base, connect related information, and respond with answers grounded in those documents.  In short, **Notebook LM is the technology “engine” that makes the SCHH AI Assistant possible**, allowing you to explore community information naturally and conversationally.
 
+> **Note:** *The SCHH AI Assistant is a resident-initiated, community-driven project and is not affiliated with the developer or any official Sun City Hilton Head organization. The tools and resources hosted on the [SCHH Commons](https://www.schh-commons.org) website are provided to help residents more easily find, understand, and use community information.*
+{: .prompt-info }
+
 ---
 
 ## The Knowledge Base
+{: #knowledge-base}
 
 The **Knowledge Base** is the foundation of the SCHH AI Assistant. It brings together a growing collection of documents, guides, and resources that help residents better understand life in Sun City Hilton Head.
 
