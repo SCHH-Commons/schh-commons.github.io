@@ -142,9 +142,11 @@ Please note that viewing resident-only pages or Library materials may require lo
   import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace/cdn/components/dialog/dialog.js';
   import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace/cdn/components/button/button.js';
 
+  const isMobile = ('ontouchstart' in document.documentElement && /mobi/i.test(navigator.userAgent) )
+
   let dialog = document.createElement('sl-dialog');
   dialog.setAttribute('size', 'large');
-  dialog.setAttribute('style', `--width: 80dvw;`);
+  dialog.setAttribute('style', `--width: ${isMobile ? '100' : '80'}dvw;`);
   let markdownEl = document.createElement('div');
   dialog.appendChild(markdownEl);
   document.body.appendChild(dialog);
@@ -165,8 +167,8 @@ Please note that viewing resident-only pages or Library materials may require lo
             fetch(`${a.href}.md`).then(resp => resp.text()).then(md => {
               markdownEl.innerHTML = marked.parse(md);
               dialog.show();
-            })
-          })
+            });
+          });
         } else {
           a.setAttribute('target', '_blank');
         }
