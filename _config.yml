@@ -294,3 +294,4 @@ gate:
   scope_path: "/"         # "/" for whole site, or "/beta/" to gate a subpath
   bypass_paths:        # pages that must remain public (no gate)
     - /request-access
+    - /thanks
