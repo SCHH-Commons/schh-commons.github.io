@@ -2,4 +2,8 @@
 layout: page
 ---
 
-# Thank you.  We'll be in touch soon.
+---
+
+### Thank you.  We'll be in touch soon.
+
+---
