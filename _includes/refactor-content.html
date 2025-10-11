@@ -191,7 +191,6 @@
         {%- if classes contains 'no-lightbox' -%}
           {%- assign skip_lb = true -%}
         {%- endif -%}
-        lightbox_on={{ lightbox_on }} skip_lb={{ skip_lb }}
         {%- if lightbox_on and skip_lb == false -%}
           <!-- create the image wrapper -->
           {% assign _wrapper_start = _final_src
