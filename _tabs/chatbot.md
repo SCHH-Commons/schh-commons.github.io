@@ -56,6 +56,7 @@ published: true
   }
 
     .button {
+      margin-top: 1em;
       position: relative;
       border-radius: 1000px;
       cursor: pointer;
@@ -85,19 +86,26 @@ published: true
 
     main h2 {
     margin: 1.5rem 0 1.25rem;
-    }   
+    }
+
+    .button {
+      margin-top: 0;
+    }
 }
 
 </style>
 
+![SCHH AI Assistant](/assets/img/Chatbot.png){: .w-50 .right}
+
 Welcome to the **SCHH AI Assistant** — a friendly, experimental tool created to help Sun City Hilton Head residents (and future neighbors) quickly find the information that matters most. Instead of digging through websites, newsletters, or emails, you can simply **ask questions in plain language** and get helpful answers drawn from reliable community sources. It’s like having a knowledgeable neighbor who’s always ready to help you learn more about life in Sun City.
 
-<p style="text-align: center;">
+---
+
+<p style="text-align: center; clear: both;">
 <a href="/chatbase" class="button">
   <img src="{{ '/assets/img/chatbase.jpg' | relative_url }}" class="no-lightbox" alt="Start AI Chatbot" style="height: 24px; width: 24px; margin-right: 8px;">Open the SCHH AI Assistant
 </a>
 </p>
-
 
 ---
 

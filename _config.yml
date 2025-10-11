@@ -238,7 +238,7 @@ defaults:
       comments: true
       toc: true
 
-lightbox: false  # Enable the lightbox feature for images in posts and pages.
+lightbox: true  # Enable the lightbox feature for images in posts and pages.
   
 # ------------ The following options are not recommended to be modified ------------------
 
