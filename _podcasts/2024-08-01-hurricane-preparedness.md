@@ -6,4 +6,5 @@ image: /assets/img/Hurricane_Guide.png
 duration: "18:27"
 audio_file: /assets/audio/Hurricane_Preparedness.mp3
 pin: true
+lightbox: false
 ---

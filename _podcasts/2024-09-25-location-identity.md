@@ -5,4 +5,5 @@ date: 2024-09-25
 image: /assets/img/29909.jpg
 duration: "5:13"
 audio_file: /assets/audio/Location_Identity.mp3
+lightbox: false
 ---

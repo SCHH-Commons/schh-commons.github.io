@@ -5,4 +5,5 @@ date: 2024-09-26
 image: /assets/img/costco.jpg
 duration: "5:11"
 audio_file: /assets/audio/Costco_Rumor.mp3
+lightbox: false
 ---

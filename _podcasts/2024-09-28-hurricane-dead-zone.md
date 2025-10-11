@@ -5,4 +5,5 @@ date: 2024-09-25
 image: /assets/img/173-yrs-of-us-hurricane-strikes.jpg
 duration: "12:42"
 audio_file: /assets/audio/Dodge_City.mp3
+lightbox: false
 ---
