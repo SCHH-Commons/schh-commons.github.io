@@ -288,7 +288,7 @@ jekyll-archives:
 
 gate:
   pass_hashes:
-    - f9578449a93fa47a4c24945847d205be36bb9fa3d260fe5a993077155a9be52f # SHA-256 hex of your current access code (lowercase)
+    - 2886b0b748b7eddb7e5f8f1e07f19997061156cd03320cc8b26576957e346f19 # SHA-256 hex of your current access code (lowercase)
     # - 9b7c8d0e12...    # optional previous hash during rotation
   token_days: 30          # remember-me duration; 0 = session-only
   scope_path: "/"         # "/" for whole site, or "/beta/" to gate a subpath
