@@ -125,7 +125,6 @@ Sources include:
 - **AI-assisted Deep Dives** — in-depth explorations that combine AI research tools with curated source material to provide a deeper understanding of key community topics  
 - **Resident-contributed content** and insights  
 
-The tables below list the documents currently included in the Knowledge Base, each with a link to its source.  (*Viewing resident-only pages or Library materials will require logging into the official Sun City website*)
 
 > **Important Note:** *The SCHH Knowledge Base isn’t meant to replace official Sun City websites, association documents, or other authoritative sources. Those remain the final word for community rules, policies, and updates. Instead, the Knowledge Base and AI Assistant serves as a helpful companion to those sources—an added layer that makes it easier to locate, connect, and understand information that matters to residents.*
 {: .prompt-warning }
@@ -143,6 +142,8 @@ The SCHH AI Assistant is currently in a pilot phase and continues to evolve as n
 </p>
 
 ## Knowledge Base Documents
+
+The tables below list the documents currently included in the Knowledge Base, each with a link to its source.  (*Viewing resident-only pages or Library materials will require logging into the official Sun City website*)
 
 <section id="docs"></docs>
 

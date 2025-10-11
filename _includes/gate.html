@@ -1,0 +1,148 @@
+<!-- Lightweight client-side access gate (deterrent, not real security) -->
+<script>
+    /*** CONFIG FROM _config.yml (via Liquid) ***/
+    const PASS_HASHES = {{ site.gate.pass_hashes | jsonify }};
+    const TOKEN_DAYS = {{ site.gate.token_days  | default: 30 }};
+    const SCOPE_PATH = {{ site.gate.scope_path  | default: "/" | jsonify }};
+    const TOKEN_KEY = 'gate_token_v1';
+
+    /* Admin email + mailto text (fallback order: gate.admin_email -> site.email -> none) */
+    const ADMIN_EMAIL = {{ site.gate.admin_email | default: site.email | jsonify }};
+    const REQ_SUBJECT = {{ site.gate.request_subject | default: "Request for access code" | jsonify }};
+    const REQ_BODY = {{ site.gate.request_body   | default: "Hello,\n\nI would like to request the current access code for the site.\n\nThank you,\n" | jsonify }};
+    /*** END CONFIG ***/
+
+    /* Hide page immediately to avoid flashing content pre-auth */
+    document.documentElement.style.visibility = 'hidden';
+
+    /* Utils */
+    const now = () => Date.now();
+    const setToken = (days) => {
+        const exp = days > 0 ? (now() + days * 24 * 60 * 60 * 1000) : null;
+        localStorage.setItem(TOKEN_KEY, JSON.stringify({ ok: true, exp }));
+    };
+    const tokenValid = () => {
+        try {
+            const raw = localStorage.getItem(TOKEN_KEY);
+            if (!raw) return false;
+            const { ok, exp } = JSON.parse(raw);
+            if (!ok) return false;
+            if (exp && now() > exp) { localStorage.removeItem(TOKEN_KEY); return false; }
+            return true;
+        } catch { return false; }
+    };
+    const sha256Hex = async (s) => {
+        const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+        return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    };
+    const pathIsScoped = () => location.pathname.startsWith(SCOPE_PATH);
+
+    /* Main */
+    (async function runGate() {
+        /* If not in scope, reveal page */
+        if (SCOPE_PATH !== '/' && !pathIsScoped()) {
+            document.documentElement.style.visibility = 'visible';
+            return;
+        }
+
+        /* If we already have a valid token, reveal */
+        if (tokenValid()) {
+            document.documentElement.style.visibility = 'visible';
+            return;
+        }
+
+        /* Build modal after DOM is ready */
+        addEventListener('DOMContentLoaded', () => {
+            /* Styles (no external CSS) */
+            const style = document.createElement('style');
+            style.textContent = `
+      .gate-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:99999}
+      .gate-card{background:#fff;padding:24px 20px;border-radius:10px;max-width:380px;width:92%;box-shadow:0 10px 30px rgba(0,0,0,.2);font:14px system-ui}
+      .gate-card h1{font-size:18px;margin:0 0 8px}
+      .gate-card p{margin:0 0 16px;color:#444}
+      .gate-row{margin:10px 0}
+      .gate-input{width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;font:14px system-ui}
+      .gate-actions{display:flex;align-items:center;justify-content:space-between;margin-top:12px;gap:8px}
+      .gate-btn{padding:10px 14px;border:0;border-radius:8px;background:#1a73e8;color:#fff;cursor:pointer}
+      .gate-btn:disabled{opacity:.6;cursor:default}
+      .gate-err{color:#b00020;margin-top:8px;min-height:18px}
+      .gate-foot{font-size:12px;color:#666;margin-top:12px;display:flex;flex-direction:column;gap:8px}
+      .gate-btn-secondary{background:#e0e0e0;color:#222}
+      noscript{display:block;padding:2rem;text-align:center}
+    `;
+            document.head.appendChild(style);
+
+            /* Modal */
+            const wrap = document.createElement('div');
+            wrap.className = 'gate-backdrop';
+            wrap.innerHTML = `
+      <div class="gate-card" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+        <h1 id="gate-title">Enter access code</h1>
+        <p>This site is limited to invited users.</p>
+        <div class="gate-row">
+          <input id="gate-pass" class="gate-input" type="password" autocomplete="current-password" placeholder="Access code">
+        </div>
+        <div class="gate-actions">
+          <label style="user-select:none;"><input id="gate-remember" type="checkbox" checked> Remember me</label>
+          <button id="gate-btn" class="gate-btn" type="button">Continue</button>
+        </div>
+        <div id="gate-err" class="gate-err" aria-live="polite"></div>
+        <div class="gate-foot">
+          <a href="#" id="gate-forgot">Forgot the code?</a>
+          <button id="gate-request" class="gate-btn gate-btn-secondary" type="button">Request access code</button>
+        </div>
+      </div>
+      <noscript><strong>JavaScript required.</strong> Contact the site admin for access.</noscript>
+    `;
+            document.body.appendChild(wrap);
+
+            const passEl = document.getElementById('gate-pass');
+            const btnEl = document.getElementById('gate-btn');
+            const errEl = document.getElementById('gate-err');
+            const rememberEl = document.getElementById('gate-remember');
+            passEl.focus();
+
+            async function tryLogin() {
+                errEl.textContent = '';
+                btnEl.disabled = true;
+                const input = passEl.value.trim();
+                const hash = (await sha256Hex(input)).toLowerCase();
+                const ok = PASS_HASHES.some(h => h.toLowerCase() === hash);
+                if (ok) {
+                    setToken(rememberEl.checked ? TOKEN_DAYS : 0);
+                    wrap.remove();
+                    document.documentElement.style.visibility = 'visible';
+                } else {
+                    errEl.textContent = 'Incorrect code. Try again.';
+                    btnEl.disabled = false;
+                    passEl.select();
+                }
+            }
+
+            btnEl.addEventListener('click', tryLogin);
+            passEl.addEventListener('keydown', e => { if (e.key === 'Enter') tryLogin(); });
+            document.getElementById('gate-forgot').addEventListener('click', e => {
+                e.preventDefault();
+                errEl.textContent = 'Ask the site admin for the current code.';
+                passEl.focus();
+            });
+
+            /* Mailto button (uses site.gate.admin_email or site.email) */
+            document.getElementById('gate-request').addEventListener('click', () => {
+                if (!ADMIN_EMAIL) {
+                    alert('No admin email configured.');
+                    return;
+                }
+                const subject = encodeURIComponent(REQ_SUBJECT || 'Request for access code');
+                const body = encodeURIComponent(REQ_BODY || 'Hello,\n\nI would like to request the current access code for the site.\n\nThank you,\n');
+                window.location.href = `mailto:${ADMIN_EMAIL}?subject=${subject}&body=${body}`;
+            });
+
+            /* Reveal underlying page (modal covers it until success) */
+            document.documentElement.style.visibility = 'visible';
+        });
+    })();
+
+    /* Optional global logout helper you can hook to a link/button */
+    window.STATIC_GATE_LOGOUT = () => { localStorage.removeItem(TOKEN_KEY); location.reload(); };
+</script>

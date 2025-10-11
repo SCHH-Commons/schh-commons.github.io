@@ -285,3 +285,18 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+gate:
+  pass_hashes:
+    - f9578449a93fa47a4c24945847d205be36bb9fa3d260fe5a993077155a9be52f # SHA-256 hex of your current access code (lowercase)
+    # - 9b7c8d0e12...    # optional previous hash during rotation
+  token_days: 30          # remember-me duration; 0 = session-only
+  scope_path: "/"         # "/" for whole site, or "/beta/" to gate a subpath
+  admin_email: admin@schh-commons.org  # optional override for email if you don't want to use site.email
+  request_subject: "Request for access code"
+  request_body: |
+    Hello,
+
+    I would like to request the current access code for the SCHH Commons site.
+
+    Thank you,
