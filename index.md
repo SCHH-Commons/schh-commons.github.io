@@ -7,7 +7,7 @@ hero:
   #  text: "Try the AI Chatbot"
   #  url: "/chatbot"
 resources:
-  - title: "AI Chatbot"
+  - title: "AI Assistant"
     url: "/chatbot"
     icon: "fas fa-robot"
     description: "Get instant answers to your SCHH questions with our AI-powered assistant trained on community knowledge"

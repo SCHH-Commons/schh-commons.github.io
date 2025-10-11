@@ -17,10 +17,7 @@ The **SCHH Commons Knowledge Base** isn’t meant to replace official Sun City w
 
 The **SCHH Commons Knowledge Base** and its **AI Assistant (chatbot)** were created to make that process even simpler. Just type a question—like you would when chatting with a friend—and the assistant provides clear, summarized answers drawn from a growing collection of trusted community sources.
 
-The **[AI Assistant](/chatbot)** is powered by Notebook LM, an innovative AI tool developed by Google that transforms collections of documents into interactive, searchable notebooks. Notebook LM provides detailed, well-sourced responses and includes citations showing which documents were used in its answers.
-
-To use the Assistant, simply open the Notebook LM link above. You’ll need to sign in with a Google account, and once inside, you can start exploring by asking questions in plain language.
-
+The Assistant is **powered by Chatbase**, a platform that uses **ChatGPT**—one of the most advanced AI language models available—to deliver conversational answers based on the Knowledge Base. Chatbase allows the Assistant to understand questions, retrieve relevant information from the curated Sun City documents, and respond in a friendly, natural way. In short, Chatbase provides the technology “engine” that makes the SCHH AI Assistant possible, enabling residents to explore community information easily through everyday conversation.
 
 The Knowledge Base currently includes most documents related to community governance and lifestyle. You can view the full list on the **[AI Assistant](/chatbot#knowledge-base)** page. Residents are encouraged to report any errors they find and to suggest—or even contribute—new information to keep the collection growing and accurate. Over time, it will expand to include more about the surrounding area, covering local services, attractions, and civic updates that matter to Sun City residents.
 

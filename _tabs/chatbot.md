@@ -93,17 +93,17 @@ published: true
 Welcome to the **SCHH AI Assistant** — a friendly, experimental tool created to help Sun City Hilton Head residents (and future neighbors) quickly find the information that matters most. Instead of digging through websites, newsletters, or emails, you can simply **ask questions in plain language** and get helpful answers drawn from reliable community sources. It’s like having a knowledgeable neighbor who’s always ready to help you learn more about life in Sun City.
 
 <p style="text-align: center;">
-<a href="https://notebooklm.google.com/notebook/0f446377-e804-4d34-baad-9c1b5676c437" class="button" target="_blank">
-  <img src="{{ '/assets/img/notebooklm.svg' | relative_url }}" class="no-lightbox" alt="Start AI Chatbot" style="height: 24px; width: 24px; margin-right: 8px;">Open the SCHH AI Assistant
+<a href="/chatbase" class="button">
+  <img src="{{ '/assets/img/chatbase.jpg' | relative_url }}" class="no-lightbox" alt="Start AI Chatbot" style="height: 24px; width: 24px; margin-right: 8px;">Open the SCHH AI Assistant
 </a>
 </p>
 
-> You will need to login your Google account to use the SCHH AI Assistant
-{: .prompt-info }
 
 ---
 
-The Assistant is **powered by Notebook LM**, an innovative AI tool created by Google that transforms collections of documents into an interactive, conversational knowledge base. Notebook LM enables the Assistant to read and understand the materials that make up the Sun City knowledge base, connect related information, and respond with answers grounded in those documents.  Notebook LM is the technology “engine” that makes the SCHH AI Assistant possible, allowing you to explore community information naturally and conversationally.
+The SCHH AI Assistant helps residents and prospective residents easily find and understand information about life in Sun City Hilton Head. It draws on a growing collection of community resources—official documents, SunSations articles, SCTV broadcasts, and more—to provide clear, conversational answers to your questions.
+
+The Assistant is **powered by Chatbase**, a platform that uses **ChatGPT**, one of the most advanced AI language models available. Chatbase connects the Assistant to the SCHH Commons Knowledge Base, allowing it to understand questions, retrieve relevant information from curated Sun City materials, and respond in a friendly, natural way.
 
 > **Note:** *The SCHH AI Assistant is a resident-initiated, community-driven project and is not affiliated with the developer or any official Sun City Hilton Head organization. The tools and resources hosted on the [SCHH Commons](https://www.schh-commons.org) website are provided to help residents more easily find, understand, and use community information.*
 {: .prompt-info }
