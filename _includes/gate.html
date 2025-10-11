@@ -1,15 +1,11 @@
 <!-- Lightweight client-side access gate (deterrent, not real security) -->
 <script>
     /*** CONFIG FROM _config.yml (via Liquid) ***/
-    const PASS_HASHES = {{ site.gate.pass_hashes | jsonify }};
-    const TOKEN_DAYS = {{ site.gate.token_days  | default: 30 }};
-    const SCOPE_PATH = {{ site.gate.scope_path  | default: "/" | jsonify }};
+    const PASS_HASHES = {{ site.gate.pass_hashes  | jsonify }};
+    const TOKEN_DAYS = {{ site.gate.token_days   | default: 30 }};
+    const SCOPE_PATH = {{ site.gate.scope_path   | default: "/" | jsonify }};
+    const BYPASS_PATHS = {{ site.gate.bypass_paths | default: [] | jsonify }};
     const TOKEN_KEY = 'gate_token_v1';
-
-    /* Admin email + mailto text (fallback order: gate.admin_email -> site.email -> none) */
-    const ADMIN_EMAIL = {{ site.gate.admin_email | default: site.email | jsonify }};
-    const REQ_SUBJECT = {{ site.gate.request_subject | default: "Request for access code" | jsonify }};
-    const REQ_BODY = {{ site.gate.request_body   | default: "Hello,\n\nI would like to request the current access code for the site.\n\nThank you,\n" | jsonify }};
     /*** END CONFIG ***/
 
     /* Hide page immediately to avoid flashing content pre-auth */
@@ -35,12 +31,15 @@
         const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
         return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
     };
-    const pathIsScoped = () => location.pathname.startsWith(SCOPE_PATH);
+
+    const pathStartsWith = (p, prefix) => p === prefix || p.startsWith(prefix.endsWith('/') ? prefix : prefix + '/');
+    const pathIsScoped = () => SCOPE_PATH === '/' ? true : pathStartsWith(location.pathname, SCOPE_PATH);
+    const pathIsBypassed = () => BYPASS_PATHS.some(bp => pathStartsWith(location.pathname, bp));
 
     /* Main */
     (async function runGate() {
-        /* If not in scope, reveal page */
-        if (SCOPE_PATH !== '/' && !pathIsScoped()) {
+        /* If outside scope OR on a bypassed path, reveal page */
+        if (!pathIsScoped() || pathIsBypassed()) {
             document.documentElement.style.visibility = 'visible';
             return;
         }
@@ -75,6 +74,8 @@
             /* Modal */
             const wrap = document.createElement('div');
             wrap.className = 'gate-backdrop';
+            const nextParam = encodeURIComponent(location.pathname + location.search + location.hash);
+            const requestUrl = `/request-access?next=${nextParam}`;
             wrap.innerHTML = `
       <div class="gate-card" role="dialog" aria-modal="true" aria-labelledby="gate-title">
         <h1 id="gate-title">Enter access code</h1>
@@ -88,18 +89,18 @@
         </div>
         <div id="gate-err" class="gate-err" aria-live="polite"></div>
         <div class="gate-foot">
-          <a href="#" id="gate-forgot">Forgot the code?</a>
-          <button id="gate-request" class="gate-btn gate-btn-secondary" type="button">Request access code</button>
+          <a href="${requestUrl}" id="gate-request" class="gate-link">Request access (no login)</a>
+          <button id="gate-request-btn" class="gate-btn gate-btn-secondary" type="button" onclick="location.href='${requestUrl}'">Go to request form</button>
         </div>
       </div>
-      <noscript><strong>JavaScript required.</strong> Contact the site admin for access.</noscript>
+      <noscript><strong>JavaScript required.</strong> Use the public request form at /request-access.</noscript>
     `;
             document.body.appendChild(wrap);
 
             const passEl = document.getElementById('gate-pass');
             const btnEl = document.getElementById('gate-btn');
-            const errEl = document.getElementById('gate-err');
             const rememberEl = document.getElementById('gate-remember');
+            const errEl = document.getElementById('gate-err');
             passEl.focus();
 
             async function tryLogin() {
@@ -118,25 +119,8 @@
                     passEl.select();
                 }
             }
-
             btnEl.addEventListener('click', tryLogin);
             passEl.addEventListener('keydown', e => { if (e.key === 'Enter') tryLogin(); });
-            document.getElementById('gate-forgot').addEventListener('click', e => {
-                e.preventDefault();
-                errEl.textContent = 'Ask the site admin for the current code.';
-                passEl.focus();
-            });
-
-            /* Mailto button (uses site.gate.admin_email or site.email) */
-            document.getElementById('gate-request').addEventListener('click', () => {
-                if (!ADMIN_EMAIL) {
-                    alert('No admin email configured.');
-                    return;
-                }
-                const subject = encodeURIComponent(REQ_SUBJECT || 'Request for access code');
-                const body = encodeURIComponent(REQ_BODY || 'Hello,\n\nI would like to request the current access code for the site.\n\nThank you,\n');
-                window.location.href = `mailto:${ADMIN_EMAIL}?subject=${subject}&body=${body}`;
-            });
 
             /* Reveal underlying page (modal covers it until success) */
             document.documentElement.style.visibility = 'visible';

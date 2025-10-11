@@ -292,11 +292,5 @@ gate:
     # - 9b7c8d0e12...    # optional previous hash during rotation
   token_days: 30          # remember-me duration; 0 = session-only
   scope_path: "/"         # "/" for whole site, or "/beta/" to gate a subpath
-  admin_email: admin@schh-commons.org  # optional override for email if you don't want to use site.email
-  request_subject: "Request for access code"
-  request_body: |
-    Hello,
-
-    I would like to request the current access code for the SCHH Commons site.
-
-    Thank you,
+  bypass_paths:        # pages that must remain public (no gate)
+    - /request-access

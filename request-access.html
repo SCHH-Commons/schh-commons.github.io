@@ -1,0 +1,102 @@
+---
+permalink: /request-access/
+layout: none
+title: Request Access
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <style>
+    body { font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; margin:0; color:#1b1b1b; }
+    .wrap { max-width:720px; margin:6vh auto; padding:0 20px; }
+    h1 { font-size:clamp(22px,3.5vw,30px); margin:0 0 .5rem; }
+    p.lead { color:#444; margin:.25rem 0 1.25rem; }
+    form { background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:18px; box-shadow:0 4px 18px rgba(0,0,0,.04); }
+    label { display:block; font-weight:600; margin:.75rem 0 .25rem; }
+    input[type="text"], input[type="email"], textarea {
+      width:calc(100% - 24px); padding:10px 12px; border:1px solid #cfd3d8; border-radius:8px; font:inherit;
+    }
+    textarea { min-height:120px; }
+    .row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .row > div { display:flex; flex-direction:column; }
+    .actions { display:flex; align-items:center; gap:12px; margin-top:14px; }
+    .btn { appearance:none; border:0; border-radius:8px; padding:10px 14px; cursor:pointer; }
+    .btn-primary { background:#1a73e8; color:#fff; }
+    .btn-secondary { background:#e5e7eb; color:#111; text-decoration:none; display:inline-block; }
+    .hint { font-size:13px; color:#6b7280; }
+    .small { font-size:13px; color:#6b7280; margin-top:10px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Request an Access Code</h1>
+    <p class="lead">Enter your email and we’ll send you the current access code. If you followed a link here from a protected page, we’ll keep track of it so you can return easily.</p>
+
+    <!-- FormSubmit: mirrors your existing contact form settings -->
+    <form class="contact-form" action="https://formsubmit.co/admin@schh-commons.org" method="POST">
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" required placeholder="you@example.com">
+
+      <div class="row">
+        <div>
+          <label for="name">Name <span class="hint">(optional)</span></label>
+          <input id="name" type="text" name="name" placeholder="Jane Doe">
+        </div>
+        <div>
+          <label for="affiliation">Affiliation <span class="hint">(optional)</span></label>
+          <input id="affiliation" type="text" name="affiliation" placeholder="Sun City, club, etc.">
+        </div>
+      </div>
+
+      <label for="message">Anything we should know? <span class="hint">(optional)</span></label>
+      <textarea id="message" name="message" rows="6" placeholder="A sentence about what you’re looking for."></textarea>
+
+      <!-- Hidden metadata -->
+      <input type="hidden" name="_subject" value="Access code request">
+      <!-- We’ll set _next via JS so it can include the original ?next= URL -->
+      <input type="hidden" id="nextField" name="_next" value="https://www.schh-commons.org/thanks">
+      <!-- Preserve the originating protected URL for your reference -->
+      <input type="hidden" id="fromUrl" name="requested_from" value="/">
+      <!-- Honeypot and captcha settings aligned with your contact form -->
+      <input type="text" name="_honey" style="display:none">
+      <input type="hidden" name="_captcha" value="false">
+
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">Request access</button>
+        <a class="btn btn-secondary" href="/">Back to home</a>
+      </div>
+
+      <p class="small" id="originNote" style="display:none; margin-top:12px;"></p>
+    </form>
+  </div>
+
+  <script>
+    // Read ?next=... from the URL provided by the gate and:
+    // 1) store it in a hidden field (requested_from) for your email context
+    // 2) append it to the _next redirect (so your thanks page can optionally offer a "Return" link)
+    (function () {
+      const params = new URLSearchParams(location.search);
+      const next = params.get('next') || '/';
+      // Where the user originally was when they hit the gate:
+      document.getElementById('fromUrl').value = next;
+
+      // Redirect after submit:
+      // Change to your preferred thanks page if different.
+      const baseThanks = 'https://www.schh-commons.org/thanks';
+      const nextUrl = baseThanks + (next && next !== '/' ? ('?next=' + encodeURIComponent(next)) : '');
+      document.getElementById('nextField').value = nextUrl;
+
+      // Optional: show a small note for user context
+      if (next && next !== '/') {
+        const note = document.getElementById('originNote');
+        note.textContent = 'You requested access for: ' + next;
+        note.style.display = 'block';
+      }
+    })();
+  </script>
+</body>
+</html>
