@@ -2,12 +2,11 @@
 title: The SCHH Commons AI Assistants
 description: The SCHH Commons Knowledge Base is a growing collection of resources about life in Sun City Hilton Head, accessible through three AI chatbots—Chatbase, Notebook LM, and Custom GPT—that all use the same information but offer different ways to interact with it.
 author: ron
-date: 2024-09-15
+date: 2025-10-12
 categories: [Announcements, AI]
 tags: [SCHH Commons, AI tools, Knowledge base, Community resources, Sun City Hilton Head]
-pin: true
 image: /assets/img/ai-assistant.jpg
-published: false
+published: true
 ---
 
 # Exploring the SCHH Commons Knowledge Base  
@@ -25,6 +24,7 @@ To make this resource as useful as possible, SCHH Commons currently offers **thr
 ---
 
 ### Why Three Options?  
+
 All three chatbots use the **same underlying Knowledge Base**, so the answers you receive should be broadly consistent. The reason for offering multiple options is that **different tools serve different needs**:  
 
 - Chatbase emphasizes **easy, no-login access** directly within the Commons website.  
