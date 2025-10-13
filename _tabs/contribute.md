@@ -13,7 +13,7 @@ toc: false
 
 <style>
     .contact-form {
-      max-width: 500px;
+      /* max-width: 500px; */
       margin: 2rem auto;
       padding: 1.5rem;
       background: #fdfdfd;
@@ -112,7 +112,11 @@ To keep the Knowledge Base reliable and respectful, please **don’t include**:
 
 ## How to Submit
 
-You can share your note as a **TeamReach DM** (for short posts) or by **email** to **info@schh-commons.org** (for longer ones).
+You can share your content as:
+  
+- a **TeamReach DM** (for short posts)
+- by **email** to **info@schh-commons.org** (for longer ones)
+- using the **[form below](#contribute-form)**
 
 Use this **simple, natural format** — no special tags, forms, or attachments needed:
 
@@ -155,10 +159,10 @@ Every contribution helps make it easier for residents to find information quickl
   <input id="email" type="email" name="email" required>
 
   <label for="message">Message</label>
-  <textarea id="message" name="message" rows="6" required></textarea>
+  <textarea id="message" name="message" rows="10" required></textarea>
 
   <!-- hidden options -->
-  <input type="hidden" name="_subject" value="Website contact form">
+  <input type="hidden" name="_subject" value="Content Submission">
   <input type="hidden" name="_next" value="https://www.schh-commons.org/thanks">
   <input type="text" name="_honey" style="display:none">
   <input type="hidden" name="_captcha" value="false">
