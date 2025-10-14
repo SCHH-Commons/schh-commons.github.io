@@ -1,11 +1,10 @@
 // ==UserScript==
 // @name         SCHH Assistant Link
 // @namespace    https://www.schh-commons.org
-// @version      1.0
-// @description  Adds a floating “Ask SCHH Assistant” button on Sun City pages that opens the chatbot with the current page and selection as context.
+// @version      1.1
+// @description  Adds a floating “Ask SCHH Assistant” button on suncityhiltonhead.org pages
 // @author       SCHH Commons
-// @match        https://*.suncity*/*
-// @match        https://*suncityhiltonhead*/*
+// @match        https://suncityhiltonhead.org/*
 // @icon         https://www.schh-commons.org/favicon.ico
 // @run-at       document-end
 // @grant        none
@@ -52,7 +51,7 @@
     // Initial injection
     addAssistantButton();
 
-    // Re-inject if the page dynamically changes (single-page apps)
+    // Re-inject if the page dynamically changes (single-page app)
     new MutationObserver(addAssistantButton).observe(document.body, {
         childList: true,
         subtree: true,
