@@ -146,11 +146,9 @@ sl-dialog::part(body) {
 </sl-dialog>
 
 <script type="module">
-    // const isMobile = ('ontouchstart' in document.documentElement && /mobi/i.test(navigator.userAgent) );
     const dialog = document.getElementById('dialog');
     console.log(dialog);
     dialog.style.display = 'block';
-    // if (isMobile) dialog.setAttribute('style', '--width: 100dvw;');
     document.getElementById('feedback').addEventListener('click', (e) => { 
         console.log('click');
         dialog.show(); }
