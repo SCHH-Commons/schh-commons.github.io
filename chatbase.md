@@ -147,10 +147,6 @@ sl-dialog::part(body) {
 
 <script type="module">
     const dialog = document.getElementById('dialog');
-    console.log(dialog);
     dialog.style.display = 'block';
-    document.getElementById('feedback').addEventListener('click', (e) => { 
-        console.log('click');
-        dialog.show(); }
-    );
+    document.getElementById('feedback').addEventListener('click', (e) => { dialog.show(); } );
 </script>
