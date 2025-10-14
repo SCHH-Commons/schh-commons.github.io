@@ -49,7 +49,8 @@ A **commons** is something shared and cared for by a community. In the past, it 
 
 Give it a try and see what you think! The AI Assistant is designed to be easy and safe to use—even if you’ve never used anything like it before. If you’ve tried ChatGPT, Gemini, or Copilot, the experience will feel familiar and friendly. Just type your question, and the chatbot will do its best to help.
 
-You can start using the SCHH Commons AI Assistant today—it’s approachable, conversational, and always available to answer questions about Sun City Hilton Head. If you find it helpful, please consider **sharing feedback**, **suggesting improvements**, or **[supporting the site](/support)** so it can continue to grow.
+You can start using the SCHH Commons AI Assistant today—it’s approachable, conversational, and always available to answer questions about Sun City Hilton Head. 
+<!-- If you find it helpful, please consider **sharing feedback**, **suggesting improvements**, or **[supporting the site](/support)** so it can continue to grow. -->
 
 Feedback and suggestions can be sent through the [Contact form](/contact) on the Commons website. And if you like what you see, please tell your neighbors and club members—the more people who use it, the better it becomes for everyone.
 
@@ -64,10 +65,14 @@ Here are a few sample prompts to try:
 
 ---
 
+<!--
 ### Support the Commons
 
 SCHH Commons will always be free to use, but it does take resources to keep it running—hosting, AI services, and maintenance. If you find the site useful, please consider a [small donation](/support) to help cover these costs and keep the project growing. Your encouragement and support mean a lot and help keep this community effort moving forward.
 
 ---
 
-*SCHH Commons is a resident-initiated, community-driven project and is not affiliated with the developer or any official Sun City Hilton Head organization. The tools and resources are provided to help residents more easily find, understand, and use community information.*
+-->
+
+> *SCHH Commons is a resident-initiated, community-driven project and is not affiliated with the developer or any official Sun City Hilton Head organization. The tools and resources are provided to help residents more easily find, understand, and use community information.*
+{: .prompt-info}

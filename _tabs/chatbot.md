@@ -139,7 +139,7 @@ Sources include:
 
 ---
 
-## Feedback and Contributions
+## Feedback
 
 The SCHH AI Assistant is currently in a pilot phase and continues to evolve as new materials are added. Contact me to identify any errors discovered, to suggest new content to be added, or to contribute a document.
 

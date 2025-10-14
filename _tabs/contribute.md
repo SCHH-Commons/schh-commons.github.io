@@ -5,7 +5,7 @@ order: 9
 published: true
 permalink: /contribute
 toc: false
-image: /assets/img/Contribute.jpg
+# image: /assets/img/Contribute.jpg
 ---
 
 <style>
