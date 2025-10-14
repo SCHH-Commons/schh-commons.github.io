@@ -84,6 +84,9 @@ permalink: /chatbase
     padding: 0 1rem 1rem 1rem;
 }
 
+sl-dialog {
+    display: none;
+}
 sl-dialog::part(body) {
     padding: 0;
 }
@@ -126,7 +129,7 @@ sl-dialog::part(body) {
     <a href="#">Report an error or missing content.</a>
 </div>
 
-<sl-dialog id="dialog" label="AI Assistant Feedback" style="--width: 100dvw;">
+<sl-dialog id="dialog" label="AI Assistant Feedback">
     <form class="contact-form" action="https://formsubmit.co/admin@schh-commons.org" method="POST">
 
         <label for="message">Describe the error or missing content </label>
@@ -135,7 +138,6 @@ sl-dialog::part(body) {
         <!-- hidden options -->
         <input type="hidden" name="email" value="feedback@schh-commons.org">
         <input type="hidden" name="_subject" value="Website contact form">
-        <input type="hidden" name="_next" value="https://www.schh-commons.org/thanks">
         <input type="text" name="_honey" style="display:none">
         <input type="hidden" name="_captcha" value="false">
 
@@ -144,7 +146,9 @@ sl-dialog::part(body) {
 </sl-dialog>
 
 <script type="module">
-    const isMobile = ('ontouchstart' in document.documentElement && /mobi/i.test(navigator.userAgent) );
+    // const isMobile = ('ontouchstart' in document.documentElement && /mobi/i.test(navigator.userAgent) );
     const dialog = document.getElementById('dialog');
+    dialog.style.display = 'block';
+    // if (isMobile) dialog.setAttribute('style', '--width: 100dvw;');
     document.getElementById('feedback').addEventListener('click', (e) => { dialog.show(); });
 </script>
