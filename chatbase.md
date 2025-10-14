@@ -138,6 +138,7 @@ sl-dialog::part(body) {
         <!-- hidden options -->
         <input type="hidden" name="email" value="feedback@schh-commons.org">
         <input type="hidden" name="_subject" value="Website contact form">
+        <input type="hidden" name="_next" value="https://www.schh-commons.org/chatbase">
         <input type="text" name="_honey" style="display:none">
         <input type="hidden" name="_captcha" value="false">
 
